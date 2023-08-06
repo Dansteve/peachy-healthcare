@@ -61,7 +61,9 @@ ion-content {
     justify-content: flex-end;
 
     a {
-      color: var(--ion-color-success);
+      background: var(--ion-color-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
