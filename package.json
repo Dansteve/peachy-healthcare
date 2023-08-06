@@ -2,7 +2,20 @@
   "name": "@peachy-healthcare/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve": "nx run-many --target=serve --projects=frontend,backend --parallel=4",
+    "build": "nx build",
+    "graph": "nx graph",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "deploy-frontend": "nx build frontend && firebase deploy --only hosting",
+    "deploy-backend": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "build:backend": "nx build backend",
+    "build:frontend": "nx build frontend",
+    "close": "npm run deploy-frontend"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~16.1.0",
