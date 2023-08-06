@@ -13,6 +13,7 @@
 * Module Leader: Dr Iain Rice
 
 ## Project Title
+
 Design and Implementation of an AI-Powered Precision Medicine Dashboard
 
 ## Project Overview
@@ -80,3 +81,11 @@ we are using postgresql database and the database is hosted on [neon](https://co
 ## Deployment
 
 * The project is deployed on Firebase. You can visit the deployed version of the project [here](https://peachy-healthcare-53901.web.app/public/login)
+
+## To Create a new component
+
+npx nx g component --name=app-footer --project=frontend
+
+## To Create a new page
+
+npx nx g page  --directory=pages/public --name=register --project=frontend
