@@ -66,9 +66,18 @@ ion-content {
   }
 }
 
-
 @media (max-width: 576px) {
   .form-card {
-    max-width: 22.75rem;
+    max-width: 23rem;
+    gap: 1.13rem;
+
+    .form-title {
+      font-size: 1.75rem;
+    }
   }
+
+  form {
+    gap: 0.5;
+  }
+
 }

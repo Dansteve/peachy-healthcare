@@ -34,7 +34,7 @@ export class AuthGuard implements CanActivate {
 
   checkWhitelistedRoute(state: RouterStateSnapshot) {
     let checkIfWhitelisted = false;
-    R.forEach((x) => {
+    R.forEach((x: any) => {
       console.log('checkIfWhitelisted :', R.test(x, state.url));
       if (R.test(x, state.url)) {
         checkIfWhitelisted = true;

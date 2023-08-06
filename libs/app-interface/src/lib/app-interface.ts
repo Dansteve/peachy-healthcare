@@ -2,6 +2,29 @@ export interface AnyInfo {
   [key: string | symbol]: any;
 }
 
+export interface LoginPayload {
+  username: string;
+  password: string;
+  rememberMe?: boolean;
+}
+
+
+export interface ForgetPasswordPayload {
+  username: string;
+  password?: string;
+  rememberMe?: boolean;
+}
+
+export interface SignUpPayload {
+  firstName: string;
+  lastName: string;
+  gender?: string;
+  username: string;
+  phoneNumber: string;
+  age?: number;
+  password: string;
+}
+
 
 export interface AuthenticatedToken {
   [key: string | symbol]: any;

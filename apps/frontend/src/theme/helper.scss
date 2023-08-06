@@ -215,16 +215,16 @@ ion-button {
     --padding-end: 0.75rem;
   }
 
-  &.button-disabled {
-    --ion-toolbar-color: var(--ion-color-main-neutral-400) !important;
-    --background: var(--ion-color-main-neutral-300) !important;
-    --ion-color-base: var(--ion-color-main-neutral-400) !important;
-    --border-color: var(--ion-color-main-neutral-400) !important;
-    --color: var(--ion-color-main-neutral-400) !important;
-    border-color: var(--ion-color-main-neutral-400) !important;
-    --border-width: 1px;
-    --border-style: solid !important;
-  }
+  // &.button-disabled {
+  //   --ion-toolbar-color: var(--ion-color-main-neutral-400) !important;
+  //   --background: var(--ion-color-main-neutral-300) !important;
+  //   --ion-color-base: var(--ion-color-main-neutral-400) !important;
+  //   --border-color: var(--ion-color-main-neutral-400) !important;
+  //   --color: var(--ion-color-main-neutral-400) !important;
+  //   border-color: var(--ion-color-main-neutral-400) !important;
+  //   --border-width: 1px;
+  //   --border-style: solid !important;
+  // }
 
   &.ion-color-medium {
     span {

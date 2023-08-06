@@ -24,8 +24,8 @@ export class FormValidatorService {
     const errorMessages: { [key: string]: string | boolean; } = {
       required: 'This field is required',
       invalidEmail: 'Please enter a valid username address',
-      minlength: `minlength ${validatorValue.requiredLength}`,
-      maxlength: `maxlength ${validatorValue.requiredLength}`,
+      minlength: `minlength ${validatorValue?.requiredLength}`,
+      maxlength: `maxlength ${validatorValue?.requiredLength}`,
     };
 
     return errorMessages[validatorName];

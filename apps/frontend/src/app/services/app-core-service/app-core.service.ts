@@ -934,7 +934,7 @@ export class AppCoreService {
     position: 'top' | 'bottom' | 'middle' = 'top',
     color = 'success', duration = 3500): Promise<HTMLIonToastElement> {
     const toast = await this.toastController.create({
-      message: `<div>${_message}</div>`,
+      message: `${_message}`,
       position,
       color,
       duration,

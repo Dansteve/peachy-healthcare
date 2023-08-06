@@ -10,7 +10,7 @@ export const isEmpty = <T>(arg: T) => Array.isArray(arg) && arg.length === 0;
 export const isEmptyArray = <T>(args: T[]) => args.some(isEmpty);
 
 /** Returns `true` if `arg` is an object with no property values. */
-export const isEmptyObject = <T>(arg: T) => isEmpty(Object.keys(arg));
+export const isEmptyObject = <T>(arg: T) => isEmpty(Object.keys(arg as object));
 
 /** Returns true if `arg` is a string of any length. */
 export const isString = (arg: unknown): boolean => typeof arg === 'string';

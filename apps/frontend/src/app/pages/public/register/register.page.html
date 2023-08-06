@@ -4,34 +4,34 @@
     <div class="form-card">
       <div class="form-title">Create an Account</div>
 
-      <form class="w-full" mode="md">
+      <form class="w-full" mode="md" autocomplete="off" #myForm="ngForm" [formGroup]="userRegistrationForm">
         <div class="w-full">
-          <ion-input class="custom" label="First Name" type="text" label-placement="floating" fill="outline" placeholder="Enter First Name"></ion-input>
+          <ion-input class="custom" name="firstName" formControlName="firstName" label="First Name" type="text" label-placement="floating" fill="outline" placeholder="Enter First Name"></ion-input>
         </div>
         <div class="w-full">
-          <ion-input class="custom" label="Last Name" type="text" label-placement="floating" fill="outline" placeholder="Enter Last Name"></ion-input>
+          <ion-input class="custom" name="lastName" formControlName="lastName" label="Last Name" type="text" label-placement="floating" fill="outline" placeholder="Enter Last Name"></ion-input>
         </div>
         <div class="w-full">
-          <ion-input class="custom" label="Age" type="text" label-placement="floating" fill="outline" placeholder="Enter Age"></ion-input>
+          <ion-input class="custom" name="age" formControlName="age" label="Age" type="text" label-placement="floating" fill="outline" placeholder="Enter Age"></ion-input>
         </div>
         <div class="w-full">
-          <ion-input class="custom" label="Phone Number" type="text" label-placement="floating" fill="outline" placeholder="Enter Phone Number"></ion-input>
+          <ion-input class="custom" name="phoneNumber" formControlName="phoneNumber" label="Phone Number" type="text" label-placement="floating" fill="outline" placeholder="Enter Phone Number"></ion-input>
         </div>
         <div class="w-full">
-          <ion-input class="custom" label="Email Address" type="email" label-placement="floating" fill="outline" placeholder="Enter Email" errorText="Invalid email"></ion-input>
+          <ion-input class="custom" name="username" formControlName="username" label="Email Address" type="email" label-placement="floating" fill="outline" placeholder="Enter Email" errorText="Invalid email"></ion-input>
         </div>
         <div class="w-full">
-          <ion-input class="custom" label="Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
+          <ion-input class="custom" name="password" formControlName="password" label="Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
         </div>
       </form>
 
-      <ion-button color="success" expand="block" class="w-full">
+      <ion-button [disabled]="userRegistrationForm.invalid" (click)="register()" color="success" expand="block" class="w-full">
         <ion-label>Create Account</ion-label>
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
-        <!-- <ion-spinner slot="end"></ion-spinner> -->
+        <!-- <ion-spinner class="ion-margin-x-8" *ngIf="isLoading" slot="end"></ion-spinner> -->
       </ion-button>
 
-      <div class="form-footer">Already have an account? <a>Log in</a></div>
+      <div class="form-footer">Already have an account? <a (click)="goTo('login')">Log in</a></div>
     </div>
   </div>
 </ion-content>

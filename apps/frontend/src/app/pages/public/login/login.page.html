@@ -4,23 +4,23 @@
     <div class="form-card">
       <div class="form-title">Welcome Back!</div>
 
-      <form class="w-full" mode="md">
+      <form class="w-full" mode="md" autocomplete="off" #myForm="ngForm" [formGroup]="userLoginForm">
         <div class="w-full">
-          <ion-input class="custom" label="Email Address" type="email" label-placement="floating" fill="outline" placeholder="Enter Email" errorText="Invalid email"></ion-input>
+          <ion-input class="custom" name="username" formControlName="username" label="Email Address" type="email" label-placement="floating" fill="outline" placeholder="Enter Email" errorText="Invalid email"></ion-input>
         </div>
         <div class="w-full">
-          <ion-input class="custom" label="Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
+          <ion-input class="custom" name="password" formControlName="password" label="Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
         </div>
-        <div class="forgot-password"> <a>Forgot password</a></div>
+        <div class="forgot-password"> <a (click)="goTo('forget-password')">Forgot password</a></div>
       </form>
 
-      <ion-button color="success" expand="block" class="w-full">
+      <ion-button [disabled]="userLoginForm.invalid" (click)="login()" color="success" expand="block" class="w-full">
         <ion-label>Login</ion-label>
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
-        <!-- <ion-spinner slot="end"></ion-spinner> -->
+        <!-- <ion-spinner class="ion-margin-x-8" *ngIf="isLoading" slot="end"></ion-spinner> -->
       </ion-button>
 
-      <div class="form-footer">Don't have an account? <a>Create account</a></div>
+      <div class="form-footer">Don't have an account? <a (click)="goTo('register')">Create account</a></div>
     </div>
   </div>
 </ion-content>
