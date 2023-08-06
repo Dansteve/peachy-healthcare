@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable guard-for-in */
-
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import imageCompression from 'browser-image-compression';

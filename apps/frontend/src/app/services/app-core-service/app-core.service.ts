@@ -1,14 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable max-len */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable guard-for-in */
-/* eslint-disable no-underscore-dangle */
-// tslint:disable: no-redundant-jsdoc
-// tslint:disable: variable-name
-// tslint:disable:forin
-// tslint:disable:max-line-length
-// eslint-disable guard-for-in
-// eslint-disable no-underscore-dangle
 import { HttpClient, HttpHeaders, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -32,9 +21,7 @@ import { ScreenSizeService } from '../screen-size/screen-size.service';
 const TOKEN_DATA = 'current_user';
 const CURRENT_TOKEN = 'current_token';
 const PERSISTENT_USER = 'persistent_user';
-const PERSISTENT_DASHBOARD = 'persistent_dashboard';
 const ENABLE_FINGERPRINT = 'enable_Fingerprint';
-const ENABLE_SHOW_BALANCE = 'show_Balance';
 const ENABLE_DARK_MODE = 'dark_mode';
 const ENABLE_PANIC_MODE = 'panic_mode';
 const ENABLE_ALWAYS_LOGGED_IN_MODE = 'always_logged_in';
@@ -437,41 +424,6 @@ export class AppCoreService {
   }
 
   /**
-   * It returns a promise that resolves to a boolean value
-   *
-   * @returns A promise that resolves to a boolean.
-   */
-  async getShowBalance(): Promise<boolean> {
-    return await this.storage.get(ENABLE_SHOW_BALANCE).then(res => {
-      if (res != null) {
-        return new Promise((resolve) => {
-          this.enableShowBalance.next((res === 'true'));
-          resolve(this.enableShowBalance.value);
-        });
-      } else {
-        return new Promise((resolve) => {
-          this.setShowBalance(true);
-          resolve(true);
-        });
-      }
-    });
-  }
-
-  /**
-   * It sets the value of the enableShowBalance variable in the storage.
-   *
-   * @param enableShowBalance - boolean = !this.enableShowBalance.value
-   *
-   * @returns A promise that resolves to the result of the storage.set() call.
-   */
-  async setShowBalance(enableShowBalance = !this.enableShowBalance.value): Promise<void> {
-    return await this.storage.set(ENABLE_SHOW_BALANCE, JSON.stringify(enableShowBalance)).then(res => new Promise((resolve) => {
-      this.enableShowBalance.next(enableShowBalance);
-      resolve(res);
-    }));
-  }
-
-  /**
    * It returns a promise that resolves to a boolean value that is the value of the
    * `enableAlwaysLoggedInMode` BehaviorSubject
    *
@@ -635,27 +587,6 @@ export class AppCoreService {
    */
   async isAuthenticated(): Promise<boolean> {
     return this.authenticationState.value;
-  }
-
-  /**
-   * It gets the persistent dashboard from the storage, decrypts it, and returns it
-   *
-   * @returns The data is being returned.
-   */
-  async getPersistentDashboard(): Promise<any> {
-    return await this.storage.get(PERSISTENT_DASHBOARD).then(res => {
-      return new Promise((resolve, reject) => {
-        const data = JSON.parse(
-          this.cryptoService.decrypt(res)
-        );
-        if (data?.code === 1) {
-          this.storage.remove(PERSISTENT_DASHBOARD);
-          reject(data);
-        } else {
-          resolve(data);
-        }
-      });
-    });
   }
 
   /**
