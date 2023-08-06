@@ -1,8 +1,9 @@
 {
   "name": "frontend",
   "devDependencies": {
+    "@capacitor/android": "../../node_modules/@capacitor/android",
     "@capacitor/cli": "^5.0.3",
     "@capacitor/ios": "../../node_modules/@capacitor/ios",
-    "@capacitor/android": "../../node_modules/@capacitor/android"
+    "@types/lodash": "^4.14.196"
   }
 }
