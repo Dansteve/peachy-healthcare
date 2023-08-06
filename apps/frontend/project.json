@@ -109,7 +109,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/lJosefinSans:eslint",
       "options": {
         "lintFilePatterns": [
           "apps/frontend/**/*.ts",

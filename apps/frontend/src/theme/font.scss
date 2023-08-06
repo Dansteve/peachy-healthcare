@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "JosefinSans-Bold";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-Bold.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-Bold {
+  font-family: "JosefinSans-Bold";
+}
+
+@font-face {
+  font-family: "JosefinSans-ExtraLight";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-ExtraLight.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-ExtraLight {
+  font-family: "JosefinSans-ExtraLight";
+}
+
+@font-face {
+  font-family: "JosefinSans-Light";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-Light.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-Light {
+  font-family: "JosefinSans-Light";
+}
+
+@font-face {
+  font-family: "JosefinSans-Medium";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-Medium.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-Medium {
+  font-family: "JosefinSans-Medium";
+}
+
+@font-face {
+  font-family: "JosefinSans-Regular";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-Regular.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-Regular {
+  font-family: "JosefinSans-Regular";
+}
+
+@font-face {
+  font-family: "JosefinSans-SemiBold";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-SemiBold.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-SemiBold {
+  font-family: "JosefinSans-SemiBold";
+}
+
+@font-face {
+  font-family: "JosefinSans-Thin";
+  src: url("../assets/fonts/JosefinSans/JosefinSans-Thin.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.JosefinSans-Thin {
+  font-family: "JosefinSans-Thin";
+}
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  --ion-font-family: "JosefinSans-Regular", "JosefinSans-Medium",
+    "JosefinSans-Bold", sans-serif;
+  --ion-default-font: "JosefinSans-Regular", "JosefinSans-Medium",
+    "JosefinSans-Bold", sans-serif;
+  font-family: var(--ion-font-family);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+
+  --ion-app-font-bold: "JosefinSans-Bold";
+  --ion-app-font-extra-light: "JosefinSans-ExtraLight";
+  --ion-app-font-light: "JosefinSans-Light";
+  --ion-app-font-medium: "JosefinSans-Medium";
+  --ion-app-font-regular: "JosefinSans-Regular";
+  --ion-app-font-semi-bold: "JosefinSans-SemiBold";
+  --ion-app-font-thin: "JosefinSans-Thin";
+}

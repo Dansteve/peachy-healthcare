@@ -1,0 +1,10 @@
+ion-input.custom {
+  --color: var(--ion-text-color);
+  --placeholder-color: var(--ion-text-light-color);
+  --placeholder-opacity: 0.8;
+
+  .label-text-wrapper {
+    margin-top: 5px;
+    color: var(--ion-text-light-color);
+  }
+}

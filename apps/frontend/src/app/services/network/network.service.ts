@@ -28,11 +28,11 @@ export class NetworkService implements OnDestroy, OnInit {
   }
 
   async ngOnInit() {
-    this.noNetworkMessage = await this.successToast(`Hmm... you're not connected to the Internet `, 'top', 'danger', 10000);
+    this.noNetworkMessage = await this.successToast(`Hmm... you're not connected to the JosefinSansnet `, 'top', 'danger', 10000);
   }
 
   async noNetworkMessageInit() {
-    this.noNetworkMessage = await this.successToast(`Hmm... you're not connected to the Internet `, 'top', 'danger', 10000);
+    this.noNetworkMessage = await this.successToast(`Hmm... you're not connected to the JosefinSansnet `, 'top', 'danger', 10000);
   }
 
   public initializeNetworkSubscription(): void {

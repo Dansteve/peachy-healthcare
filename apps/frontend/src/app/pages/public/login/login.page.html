@@ -1,0 +1,26 @@
+<ion-content class="ion-padding">
+  <!-- have a login form centered in the middle of the screen. -->
+  <div slot="fixed" class="page-fixed">
+    <div class="form-card">
+      <div class="form-title">Welcome Back!</div>
+
+      <form class="w-full" mode="md">
+        <div class="w-full">
+          <ion-input class="custom" label="Email Address" type="email" label-placement="floating" fill="outline" placeholder="Enter Email" errorText="Invalid email"></ion-input>
+        </div>
+        <div class="w-full">
+          <ion-input class="custom" label="Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
+        </div>
+        <div class="forgot-password"> <a>Forgot password</a></div>
+      </form>
+
+      <ion-button color="success" expand="block" class="w-full">
+        <ion-label>Login</ion-label>
+        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        <!-- <ion-spinner slot="end"></ion-spinner> -->
+      </ion-button>
+
+      <div class="form-footer">Don't have an account? <a>Create account</a></div>
+    </div>
+  </div>
+</ion-content>
