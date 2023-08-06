@@ -92,7 +92,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private httpHandleError(error: HttpErrorResponse) {
-    let result = null;
+    let result: Record<any, any> = {};
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
@@ -143,7 +143,14 @@ export class AuthInterceptor implements HttpInterceptor {
       console.log(result);
     }
     // return an observable with a userDataState-facing error message
-    return throwError(result);
+    return throwError(() => {
+      const error: any = new Error(result['message']);
+      error.timestamp = new Date();
+      error.status = result['status'];
+      error.success = result['success'];
+      error.title = result['title'];
+      return error;
+    });
   }
 
 }
