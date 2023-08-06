@@ -1,13 +1,19 @@
 # Peachy healthcare Dashboard by Dansteve Adekanbi (22178806)
 
+<!-- add image -->
+![Peachy healthcare Dashboard](logo.png)
+
 ## Author
 
 * Name: Dansteve Adegbola Adekanbi
 * Student ID: 22178806
 * Course Title: CMP7200 - Individual Master's Project
-* Course Code: MP7246
+* Course Code: CMP7200
 * University: Birmingham City University
 * Module Leader: Dr Iain Rice
+
+## Project Title
+Design and Implementation of an AI-Powered Precision Medicine Dashboard
 
 ## Project Overview
 
