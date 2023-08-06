@@ -1,0 +1,242 @@
+@for $i from 1 through 200 {
+  .ion-padding-top-#{$i} {
+    padding-top: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-bottom-#{$i} {
+    padding-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-top-#{$i}-full {
+    padding-top: calc(#{$i} * 0.063rem) !important;
+    --padding-top: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-bottom-#{$i}-full {
+    padding-bottom: calc(#{$i} * 0.063rem) !important;
+    --padding-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-right-#{$i} {
+    padding-right: calc(#{$i} * 0.063rem) !important;
+    --padding-end: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-left-#{$i} {
+    padding-left: calc(#{$i} * 0.063rem) !important;
+    --padding-start: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-#{$i} {
+    padding: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-x-#{$i} {
+    padding-right: calc(#{$i} * 0.063rem) !important;
+    padding-left: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-y-#{$i} {
+    padding-top: calc(#{$i} * 0.063rem) !important;
+    padding-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-#{$i}-full {
+    padding-right: calc(#{$i} * 0.063rem) !important;
+    padding-left: calc(#{$i} * 0.063rem) !important;
+    --padding-start: calc(#{$i} * 0.063rem) !important;
+    --padding-end: calc(#{$i} * 0.063rem) !important;
+    padding-top: calc(#{$i} * 0.063rem) !important;
+    padding-bottom: calc(#{$i} * 0.063rem) !important;
+    --padding-top: calc(#{$i} * 0.063rem) !important;
+    --padding-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-x-#{$i}-full {
+    padding-right: calc(#{$i} * 0.063rem) !important;
+    padding-left: calc(#{$i} * 0.063rem) !important;
+    --padding-start: calc(#{$i} * 0.063rem) !important;
+    --padding-end: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-padding-y-#{$i}-full {
+    padding-top: calc(#{$i} * 0.063rem) !important;
+    padding-bottom: calc(#{$i} * 0.063rem) !important;
+    --padding-top: calc(#{$i} * 0.063rem) !important;
+    --padding-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-top-#{$i} {
+    margin-top: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-bottom-#{$i} {
+    margin-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-top-#{$i}-full {
+    margin-top: calc(#{$i} * 0.063rem) !important;
+    --margin-top: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-bottom-#{$i}-full {
+    margin-bottom: calc(#{$i} * 0.063rem) !important;
+    --margin-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-right-#{$i} {
+    margin-right: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-left-#{$i} {
+    margin-left: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-#{$i} {
+    margin: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-x-#{$i} {
+    margin-right: calc(#{$i} * 0.063rem) !important;
+    margin-left: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-y-#{$i} {
+    margin-top: calc(#{$i} * 0.063rem) !important;
+    margin-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-x-#{$i}-full {
+    margin-right: calc(#{$i} * 0.063rem) !important;
+    margin-left: calc(#{$i} * 0.063rem) !important;
+    --margin-start: calc(#{$i} * 0.063rem) !important;
+    --margin-end: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .ion-margin-y-#{$i}-full {
+    margin-top: calc(#{$i} * 0.063rem) !important;
+    margin-bottom: calc(#{$i} * 0.063rem) !important;
+    --margin-top: calc(#{$i} * 0.063rem) !important;
+    --margin-bottom: calc(#{$i} * 0.063rem) !important;
+  }
+
+  .min-height-#{$i} {
+    min-height: calc(#{$i} * 1%) !important;
+  }
+
+  .max-height-#{$i} {
+    max-height: calc(#{$i} * 1%) !important;
+  }
+
+  .min-width-#{$i} {
+    min-width: calc(#{$i} * 1%) !important;
+  }
+
+  .max-width-#{$i} {
+    max-width: calc(#{$i} * 1%) !important;
+  }
+
+  .min-height-#{$i}-px {
+    min-height: calc(#{$i} * 1px) !important;
+  }
+
+  .max-height-#{$i}-px {
+    max-height: calc(#{$i} * 1px) !important;
+  }
+
+  .min-width-#{$i}-px {
+    min-width: calc(#{$i} * 1px) !important;
+  }
+
+  .max-width-#{$i}-px {
+    max-width: calc(#{$i} * 1px) !important;
+  }
+
+  .height-#{$i} {
+    height: calc(#{$i} * 1%) !important;
+  }
+
+  .width-#{$i} {
+    width: calc(#{$i} * 1%) !important;
+  }
+
+  .height-#{$i}-px {
+    height: calc(#{$i} * 1px) !important;
+  }
+
+  .width-#{$i}-px {
+    width: calc(#{$i} * 1px) !important;
+  }
+
+  .height-#{$i}-rem {
+    height: calc(#{$i} * 1rem) !important;
+  }
+
+  .width-#{$i}-rem {
+    width: calc(#{$i} * 1rem) !important;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.ion-margin-auto {
+  margin: auto;
+}
+
+a,
+.clickable {
+  cursor: pointer;
+}
+
+ion-button {
+  font-family: var(--ion-app-font-medium) !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: -0.01em;
+  text-align: center;
+  --border-radius: 0.375rem;
+  height: 2.75rem;
+  max-height: 3.75rem;
+  --border-width: 1.2px;
+
+  &[size="small"] {
+    font-weight: 500;
+    font-size: 0.85rem;
+    height: 2.2rem;
+    --padding-start: 0.75rem;
+    --padding-end: 0.75rem;
+  }
+
+  // &.button-disabled {
+  //   --ion-toolbar-color: var(--ion-color-main-neutral-400) !important;
+  //   --background: var(--ion-color-main-neutral-300) !important;
+  //   --ion-color-base: var(--ion-color-main-neutral-400) !important;
+  //   --border-color: var(--ion-color-main-neutral-400) !important;
+  //   --color: var(--ion-color-main-neutral-400) !important;
+  //   border-color: var(--ion-color-main-neutral-400) !important;
+  //   --border-width: 1px;
+  //   --border-style: solid !important;
+  // }
+
+  &.ion-color-medium {
+    span {
+      --color: var(--ion-color-main-neutral-700) !important;
+      color: var(--ion-color-main-neutral-700) !important;
+    }
+  }
+}
+
+.ion-no-button-padding {
+  &::part(native) {
+    --padding-start: 4px;
+    --padding-end: 0px;
+  }
+}

@@ -1,0 +1,83 @@
+ion-content {
+  --background: url('../../../../assets/img/register-bg.png') no-repeat center center / cover;
+}
+
+.page-fixed {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 26.75rem;
+  min-height: 27rem;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  display: flex;
+  padding-top: 1.75rem;
+  padding-left: 2.88rem;
+  padding-right: 2.88rem;
+  padding-bottom: 2.56rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.13rem;
+
+  .form-title {
+    color: #414141;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .form-footer {
+    color: #707070;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    a {
+      color: #000;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.19rem;
+  }
+
+  .forgot-password {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      color: var(--ion-color-success);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .form-card {
+    max-width: 23rem;
+    gap: 1.13rem;
+
+    .form-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  form {
+    gap: 0.5;
+  }
+
+}

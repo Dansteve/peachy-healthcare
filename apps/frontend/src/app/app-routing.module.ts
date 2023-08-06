@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
+
+
+
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+    path: '',
+    redirectTo: 'public',
+    title: 'Public',
+    pathMatch: 'full'
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    path: 'public',
+    loadChildren: () => import('./pages/public/public-routing.module').then(m => m.PublicRoutingModule)
+  },
+  {
+    path: 'member',
+    loadChildren: () => import('./pages/member/member-routing.module').then(m => m.MemberRoutingModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'public',
+    pathMatch: 'full'
   },
 ];
+
 
 @NgModule({
   imports: [
@@ -20,4 +34,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

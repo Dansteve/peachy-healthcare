@@ -3,6 +3,20 @@
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "aaron-bond.better-comments",
+    "DavidAnson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.githistory",
+    "DotJoshJohnson.xml",
+    "eamodio.gitlens",
+    "ms-python.python",
+    "redhat.vscode-yaml",
+    "richie5um2.vscode-sort-json",
+    "shd101wyy.markdown-preview-enhanced",
+    "sibiraj-s.vscode-scss-formatter",
+    "streetsidesoftware.code-spell-checker",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "ionic.ionic"
   ]
 }
