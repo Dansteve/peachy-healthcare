@@ -2,9 +2,9 @@
   <ion-toolbar>
     <div class="header-row ion-padding">
       <div class="header-row-left">
-        <div class="nav-logo">
+        <a class="nav-logo" href="#index">
           <ion-img src="assets/img/peachy-side.png"></ion-img>
-        </div>
+        </a>
 
         <div class="nav-links  ion-hide-lg-down">
           <a href="#about">About</a>
@@ -14,10 +14,10 @@
         </div>
       </div>
       <div class="header-row-right">
-        <ion-button (click)="goTo('login')" fill="outline" color="dark">
+        <ion-button (click)="goTo('login')" fill="outline" color="dark" size="small">
           <ion-label>Login</ion-label>
         </ion-button>
-        <ion-button (click)="goTo('register')" color="brand">
+        <ion-button (click)="goTo('register')" color="brand" size="small">
           <ion-label>Sign up</ion-label>
         </ion-button>
       </div>
@@ -27,7 +27,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="container ion-padding-top">
-    <div class="hero">
+    <div class="hero" id="index">
       <div class="hero-content">
         <div class="hero-title">Understand how <span>medicines</span> work in your body</div>
         <div class="hero-subtitle">Enjoy life without wondering whether your medicine works or if you will get side effects. With our personalised genetic test you will know which medicine will be the most efficient for you.</div>
@@ -100,6 +100,48 @@
     <div class="how" id="how">
       <div class="how-title">How it works</div>
       <div class="how-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui id lobortis pretium blandit.</div>
+    </div>
+
+    <div class="how-card-container">
+      <div class="how-card">
+        <div class="how-card-count full">
+          01.
+        </div>
+        <div>
+          <div class="how-card-title">Create your <span>Account</span></div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-count">
+          02.
+        </div>
+        <div>
+          <div class="how-card-title">Take a Test</div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-count">
+          03.
+        </div>
+        <div>
+          <div class="how-card-title">View Recommendation</div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-count">
+          04.
+        </div>
+        <div>
+          <div class="how-card-title">Health History</div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
     </div>
 
     <div class="copyright ion-padding">&copy; Peachy healthcare by <a href="https://www.linkedin.com/in/dansteve-adekanbi/">Dansteve Adekanbi (2023)</a></div>
