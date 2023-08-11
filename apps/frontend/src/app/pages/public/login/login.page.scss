@@ -19,8 +19,8 @@ ion-content {
   border-radius: 2px;
   display: flex;
   padding-top: 1.75rem;
-  padding-left: 2.88rem;
-  padding-right: 2.88rem;
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
   padding-bottom: 2.56rem;
   flex-direction: column;
   align-items: center;
@@ -32,6 +32,7 @@ ion-content {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    text-align: center;
   }
 
   .form-footer {
@@ -71,7 +72,7 @@ ion-content {
 
 @media (max-width: 576px) {
   .form-card {
-    max-width: 23rem;
+    // max-width: 23rem;
     gap: 1.13rem;
 
     .form-title {
@@ -83,4 +84,15 @@ ion-content {
     gap: 0.5;
   }
 
+}
+
+
+ion-img {
+  max-width: 227px
+}
+
+
+.peachy-logo {
+  display: flex;
+  justify-content: center;
 }

@@ -24,6 +24,7 @@ export class LoginPage implements OnInit {
     rememberMe: false
   };
   showPassword = false;
+  isLoading = false;
 
   readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
@@ -62,6 +63,10 @@ export class LoginPage implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 
 }
