@@ -23,7 +23,7 @@ export class ForgetPasswordPage implements OnInit {
     rememberMe: false
   };
   showPassword = false;
-
+  stage = 1;
   isLoading = false;
 
   readonly isPwa: Readonly<boolean> = environment.isPwa;
@@ -59,13 +59,26 @@ export class ForgetPasswordPage implements OnInit {
     this.navController.navigateForward(link, { animated: false });
   }
 
+  goBack() {
+    if (this.stage == 1) {
+      this.navController.back({ animated: false });
+    }
+    if (this.stage == 2) {
+      this.stage = 1;
+    }
+  }
+
   proceed() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-      this.apiService.successToast('Password reset link has been sent to your email address');
+    if (this.stage == 1) {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+        this.stage = 2;
+      }, 2000);
+    }
+    if (this.stage == 2) {
       this.goTo('login');
-    }, 2000);
+    }
   }
 
 }
