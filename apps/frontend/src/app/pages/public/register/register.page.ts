@@ -17,17 +17,62 @@ import { ScreenSizeService } from '../../../services/screen-size/screen-size.ser
 })
 export class RegisterPage implements OnInit {
   userRegistrationForm!: FormGroup;
+  userAddressForm!: FormGroup;
   user: SignUpPayload = {
     username: '',//'danstevea@gmail.com',
     password: '',// 'password',
     firstName: '',
     lastName: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    address: {
+      search: '',
+      postcode: '',
+      county: '',
+      line_1: '',
+      line_2: '',
+      town_or_city: '',
+    }
   };
+  isLoading = false;
   showPassword = false;
+  stage = 1;
+  showSuggestions = false;
+  suggestions = [
+    {
+      "address": "40 Highfield Road, Saltley, Birmingham, West Midlands",
+      "url": "/get/Mjc4YTg4NDkwZGJiNmRiIDI4NDExOTEzIDgzZjNjMWExMDdlZTgxYg==",
+      "id": "Mjc4YTg4NDkwZGJiNmRiIDI4NDExOTEzIDgzZjNjMWExMDdlZTgxYg=="
+    },
+    {
+      "address": "42 Highfield Road, Saltley, Birmingham, West Midlands",
+      "url": "/get/ZjgzOGFkMjYyYWE5ZWQzIDI4NDExOTE0IDgzZjNjMWExMDdlZTgxYg==",
+      "id": "ZjgzOGFkMjYyYWE5ZWQzIDI4NDExOTE0IDgzZjNjMWExMDdlZTgxYg=="
+    },
+    {
+      "address": "44 Highfield Road, Saltley, Birmingham, West Midlands",
+      "url": "/get/ZDU2ZDE2MWYwODk0ZjRhIDI4NDExOTE1IDgzZjNjMWExMDdlZTgxYg==",
+      "id": "ZDU2ZDE2MWYwODk0ZjRhIDI4NDExOTE1IDgzZjNjMWExMDdlZTgxYg=="
+    },
+    {
+      "address": "46 Highfield Road, Saltley, Birmingham, West Midlands",
+      "url": "/get/Yjg5YjEzZTI5ZjNjYmQ2IDI4NDExOTE2IDgzZjNjMWExMDdlZTgxYg==",
+      "id": "Yjg5YjEzZTI5ZjNjYmQ2IDI4NDExOTE2IDgzZjNjMWExMDdlZTgxYg=="
+    },
+    {
+      "address": "48 Highfield Road, Saltley, Birmingham, West Midlands",
+      "url": "/get/OWQyMmVhNDY5OGI3ZmFiIDI4NDExOTE3IDgzZjNjMWExMDdlZTgxYg==",
+      "id": "OWQyMmVhNDY5OGI3ZmFiIDI4NDExOTE3IDgzZjNjMWExMDdlZTgxYg=="
+    },
+    {
+      "address": "54 Highfield Road, Saltley, Birmingham, West Midlands",
+      "url": "/get/ZjBiMjc1MTVhMGEwNDAwIDI4NDExOTE4IDgzZjNjMWExMDdlZTgxYg==",
+      "id": "ZjBiMjc1MTVhMGEwNDAwIDI4NDExOTE4IDgzZjNjMWExMDdlZTgxYg=="
+    }
+  ];
 
   readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
+
 
   constructor(
     public screenSizeService: ScreenSizeService,
@@ -43,6 +88,17 @@ export class RegisterPage implements OnInit {
   }
 
   ngOnInit() {
+    if (this.stage == 1) {
+      this.setUpRegistrationForm();
+    }
+
+    if (this.stage == 2) {
+      this.setUpAddressForm();
+    }
+
+  }
+
+  setUpRegistrationForm() {
     this.userRegistrationForm = this.formBuilder.group({
       firstName: new FormControl<string | null>('', {
         validators: Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(20)])
@@ -54,7 +110,7 @@ export class RegisterPage implements OnInit {
         validators: Validators.compose([Validators.required])
       }),
       phoneNumber: new FormControl<string | null>('', {
-        validators: Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])
+        validators: Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(12)])
       }),
       username: new FormControl<string | null>('', {
         validators: Validators.compose([Validators.required, Validators.email, FormValidatorService.emailValidator])
@@ -66,7 +122,52 @@ export class RegisterPage implements OnInit {
   }
 
 
+  setUpAddressForm() {
+    this.userAddressForm = this.formBuilder.group({
+      search: new FormControl<string | null | undefined>('', {
+        validators: Validators.compose([Validators.minLength(2), Validators.maxLength(30)])
+      }),
+      postcode: new FormControl<string | null | undefined>('', {
+        validators: Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])
+      }),
+      line_1: new FormControl<string | null | undefined>('', {
+        validators: Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])
+      }),
+      line_2: new FormControl<string | null | undefined>('', {
+        validators: Validators.compose([Validators.minLength(2), Validators.maxLength(30)])
+      }),
+      town_or_city: new FormControl<string | null | undefined>('', {
+        validators: Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])
+      }),
+      county: new FormControl<string | null | undefined>('', {
+        validators: Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])
+      }),
+    });
+
+    // on value change of postcode call a suggestion api to get suggestions
+    this.userAddressForm.get('search')?.valueChanges.subscribe(async (value) => {
+      if (value.length > 4) {
+        // add bounce to the api call
+        await this.helperMethods.promiseTimeout(this.apiService.getAddressSuggestions(value)).then((res) => {
+          console.log(res);
+          this.suggestions = res.suggestions;
+          this.showSuggestions = true;
+        });
+      }
+    });
+  }
+
   ionViewDidEnter() {
+  }
+
+  changeStage(stage: 1 | 2) {
+    this.stage = stage;
+    if (stage == 1) {
+      this.setUpRegistrationForm();
+    }
+    if (stage == 2) {
+      this.setUpAddressForm();
+    }
   }
 
   goTo(page = '') {
@@ -75,5 +176,58 @@ export class RegisterPage implements OnInit {
     this.navController.navigateForward(link, { animated: false });
   }
 
-  register() { }
+  goBack() {
+    if (this.stage == 1) {
+      this.navController.back({ animated: false});
+    }
+    if (this.stage == 2) {
+      this.changeStage(1);
+    }
+  }
+
+  register() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+      this.apiService.successToast('Registration Successful');
+      this.goTo('login');
+    }, 2000);
+  }
+
+  async selectAddress(suggestion: any) {
+    this.showSuggestions = false;
+    await this.helperMethods.promiseTimeout(this.apiService.getAddressInfo(suggestion?.id)).then((res) => {
+      console.log(res);
+      // this.suggestions = res.suggestions
+      //       {
+      //     "postcode": "B8 3QU",
+      //     "latitude": 52.4904132,
+      //     "longitude": -1.8510468,
+      //     "formatted_address": [
+      //         "40 Highfield Road",
+      //         "",
+      //         "",
+      //         "Saltley, Birmingham",
+      //         "West Midlands"
+      //     ],
+      //     "thoroughfare": "Highfield Road",
+      //     "building_name": "",
+      //     "sub_building_name": "",
+      //     "sub_building_number": "",
+      //     "building_number": "40",
+      //     "line_1": "40 Highfield Road",
+      //     "line_2": "",
+      //     "line_3": "",
+      //     "line_4": "",
+      //     "locality": "Saltley",
+      //     "town_or_city": "Birmingham",
+      //     "county": "West Midlands",
+      //     "district": "Birmingham",
+      //     "country": "England",
+      //     "residential": true
+      // }
+      this.user.address = res;
+      this.user.address.search = '';
+    });
+  }
 }

@@ -3,16 +3,28 @@
   <div slot="fixed" class="page-fixed">
     <div class="form-card">
 
-      <div><img src="assets/img/peachy.png"></div>
+      <div class="w-full">
+        <div class="flex w-full">
+          <ion-button fill="clear" size="small" (click)="goBack()">
+            <ion-icon slot="icon-only" name="arrow-back-outline" color="dark"></ion-icon>
+          </ion-button>
+        </div>
+        <div class="ion-padding-bottom-8 peachy-logo">
+          <ion-img src="assets/img/peachy.png"></ion-img>
+        </div>
+      </div>
 
+      <ng-container *ngIf="stage === 1">
         <div class="form-title">Create an Account</div>
 
         <form class="w-full" mode="md" autocomplete="off" #myForm="ngForm" [formGroup]="userRegistrationForm">
-          <div class="w-full">
-            <ion-input class="custom" name="firstName" formControlName="firstName" label="First Name" type="text" label-placement="floating" fill="outline" placeholder="Enter First Name"></ion-input>
-          </div>
-          <div class="w-full">
-            <ion-input class="custom" name="lastName" formControlName="lastName" label="Last Name" type="text" label-placement="floating" fill="outline" placeholder="Enter Last Name"></ion-input>
+          <div class="form-grid">
+            <div class="w-full">
+              <ion-input class="custom" name="firstName" formControlName="firstName" label="First Name" type="text" label-placement="floating" fill="outline" placeholder="Enter First Name"></ion-input>
+            </div>
+            <div class="w-full">
+              <ion-input class="custom" name="lastName" formControlName="lastName" label="Last Name" type="text" label-placement="floating" fill="outline" placeholder="Enter Last Name"></ion-input>
+            </div>
           </div>
           <div class="w-full">
             <ion-input class="custom" name="age" formControlName="age" label="Age" type="text" label-placement="floating" fill="outline" placeholder="Enter Age"></ion-input>
@@ -24,17 +36,63 @@
             <ion-input class="custom" name="username" formControlName="username" label="Email Address" type="email" label-placement="floating" fill="outline" placeholder="Enter Email" errorText=""></ion-input>
           </div>
           <div class="w-full">
-            <ion-input class="custom" name="password" formControlName="password" label="Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
+            <ion-input class="custom" name="password" formControlName="password" label="Create Password" type="password" label-placement="floating" fill="outline" placeholder="Enter password"></ion-input>
           </div>
         </form>
 
-        <ion-button [disabled]="userRegistrationForm.invalid" (click)="register()" color="brand" expand="block" class="w-full">
-          <ion-label>Create Account</ion-label>
+        <ion-button [disabled]="userRegistrationForm.invalid" (click)="changeStage(2)" color="brand" expand="block" class="w-full">
+          <ion-label>Proceed</ion-label>
           <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
           <!-- <ion-spinner class="ion-margin-x-8" *ngIf="isLoading" slot="end"></ion-spinner> -->
         </ion-button>
+      </ng-container>
 
-        <div class="form-footer">Already have an account? <a (click)="goTo('login')">Log in</a></div>
-      </div>
+      <ng-container *ngIf="stage === 2">
+        <div class="form-title">Address Details</div>
+
+        <form class="w-full" mode="md" autocomplete="off" #myForm="ngForm" [formGroup]="userAddressForm">
+          <div class="w-full">
+            <ion-input [(ngModel)]="user.address.search" class="custom" name="search" formControlName="search" label="UK PostCode or Address line" type="text" label-placement="floating" fill="outline" placeholder="Enter UK PostCode or Address line"></ion-input>
+          </div>
+          <div class="w-full postcode-autocomplete-container" *ngIf="showSuggestions">
+            <ion-card class="w-full postcode-autocomplete">
+              <ion-item class="clickable" (click)="selectAddress(item)" *ngFor="let item of suggestions; let i=index">
+                <ion-label>{{item?.address}}</ion-label>
+              </ion-item>
+            </ion-card>
+          </div>
+
+          <ion-loading [isOpen]="showSuggestions === false && user.address.line_1 === ''  && user.address.search.length > 5"> </ion-loading>
+
+          <div class="w-full">
+            <ion-input [(ngModel)]="user.address.line_1" class="custom" name="line_1" formControlName="line_1" label="Address Line 1" type="text" label-placement="floating" fill="outline" placeholder="Enter Address Line 1"></ion-input>
+          </div>
+
+          <div class="w-full">
+            <ion-input [(ngModel)]="user.address.line_2" class="custom" name="line_2" formControlName="line_2" label="Address Line 2" type="text" label-placement="floating" fill="outline" placeholder="Enter Address Line 2"></ion-input>
+          </div>
+
+          <div class="form-grid">
+            <div class="w-full">
+              <ion-input [(ngModel)]="user.address.town_or_city" class="custom" name="town_or_city" formControlName="town_or_city" label="City" type="text" label-placement="floating" fill="outline" placeholder="Enter City"></ion-input>
+            </div>
+            <div class="w-full">
+              <ion-input [(ngModel)]="user.address.county" class="custom" name="county" formControlName="county" label="County" type="text" label-placement="floating" fill="outline" placeholder="Enter County"></ion-input>
+            </div>
+          </div>
+          <div class="w-full">
+            <ion-input [(ngModel)]="user.address.postcode" class="custom" name="postcode" formControlName="postcode" label="PostCode" type="text" label-placement="floating" fill="outline" placeholder="Enter PostCode"></ion-input>
+          </div>
+        </form>
+
+        <ion-button [disabled]="userAddressForm.invalid" (click)="register()" color="brand" expand="block" class="w-full">
+          <ion-label>Create Account</ion-label>
+          <ion-icon *ngIf="!isLoading" slot="end" name="arrow-forward-outline"></ion-icon>
+          <ion-spinner class="ion-margin-x-8" *ngIf="isLoading" slot="end"></ion-spinner>
+        </ion-button>
+      </ng-container>
+
+      <div class="form-footer">Already have an account? <a (click)="goTo('login')">Log in</a></div>
     </div>
+  </div>
 </ion-content>
