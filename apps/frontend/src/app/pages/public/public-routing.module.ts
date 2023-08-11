@@ -6,7 +6,7 @@ import { DataResolverService } from '../../services/resolver/data-resolver.servi
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'index',
     pathMatch: 'full'
   },
   {
@@ -26,8 +26,18 @@ const routes: Routes = [
   },
   {
     path: 'reset-password',
-    title: 'Reset Password',
-    loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule),
+    children: [
+      {
+        path: '',
+        title: 'Reset Password',
+        loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule),
+      },
+      {
+        path: ':resetId',
+        title: 'Reset Password',
+        loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule),
+      }
+    ],
   },
   {
     path: 'forget-password',
