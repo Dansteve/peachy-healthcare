@@ -4,6 +4,9 @@ ion-toolbar {
   --border-color: var(--ion-color-stroke);
 }
 
+ion-content {
+  --background: #FAFAFA;
+}
 
 .profile-info {
   display: flex;
@@ -19,11 +22,13 @@ ion-toolbar {
   }
 
   .name {
+    color: #555557;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
   }
 }

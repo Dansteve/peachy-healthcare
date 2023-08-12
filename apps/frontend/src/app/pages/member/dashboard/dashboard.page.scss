@@ -4,6 +4,9 @@ ion-toolbar {
   --border-color: var(--ion-color-stroke);
 }
 
+ion-content {
+  --background: #FAFAFA;
+}
 
 .profile-info {
   display: flex;
@@ -19,11 +22,109 @@ ion-toolbar {
   }
 
   .name {
+    color: #555557;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
   }
+}
+
+.content-container {
+  padding: 1.5rem;
+}
+
+.content-title {
+  color: #454F59;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.action-card {
+  border-radius: 0.5rem;
+  background: #FFF;
+  display: flex;
+  // width: 23.125rem;
+  padding: 1rem 4.4375rem 1rem 1.5rem;
+  margin: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  height: 100%;
+  // width: 100%;
+
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.67rem;
+    align-items: flex-start;
+  }
+
+
+  .feature-img {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    ion-img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  .feature-title {
+    color: #000;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
+  }
+
+  .feature-subtitle {
+    color: #87878C;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem
+  }
+}
+
+
+.welcome-card {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.24) 100%),
+    linear-gradient(225deg, #FFA44C 0%, #FD3C83 100%);
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 5rem;
+
+  .welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.81rem;
+
+    .welcome-title {
+      color: #FFF;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .welcome-subtitle {
+      color: rgba(229, 229, 229, 0.87);
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.09375rem;
+    }
+  }
+
+
 }
