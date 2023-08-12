@@ -3,7 +3,7 @@
     <ion-tab-button tab="dashboard" color="dark" (click)="goBackToTab('dashboard')">
       <img class="icon-size" src="assets/tab/dashboard.svg" *ngIf="currentUrl !== 'dashboard'">
       <img class="icon-size" src="assets/tab/dashboard-active-mobile.svg" *ngIf="currentUrl === 'dashboard'">
-      <ion-label>Home</ion-label>
+      <ion-label>Overview</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="my-test" color="dark" (click)="goBackToTab('my-test')">
@@ -36,12 +36,12 @@
     </ion-header>
     <ion-content class="my-color">
       <div class="left-side-bar">
-        <ion-list lines="none" class="">
+        <ion-list lines="none" class="ion-margin-top-40">
           <ion-item (click)="goToTab('dashboard')" class="my-menu-item" [ngClass]="{'active-side-menu': currentUrl === 'dashboard'}" label="dashboard" data="dashboard">
             <img alt="Peachy" src="assets/tab/dashboard.svg" slot="start" *ngIf="currentUrl !== 'dashboard'">
             <img alt="Peachy" src="assets/tab/dashboard-active.svg" slot="start" *ngIf="currentUrl === 'dashboard'">
             <ion-label *ngIf="!iconOnly">
-              <div class="title">Dashboard</div>
+              <div class="title">Overview</div>
             </ion-label>
           </ion-item>
           <ion-item (click)="goToTab('my-test')" class="my-menu-item" [ngClass]="{'active-side-menu': currentUrl === 'my-test'}" label="my-test" data="my-test">
@@ -68,11 +68,6 @@
     </ion-footer>
   </ion-menu>
 
-  <div class="full-width">
-    <div>
-      Dansteve
-    </div>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </div>
+<ion-router-outlet id="main-content"></ion-router-outlet>
 
 </ion-split-pane>

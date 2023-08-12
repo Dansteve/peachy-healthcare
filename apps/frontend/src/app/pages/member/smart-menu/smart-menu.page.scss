@@ -121,8 +121,9 @@
 }
 
 .logoImage {
-  height: 1.875rem;
-  width: 150px;
+  // height: 1.875rem;
+  margin-left: 0.5rem;
+  width: 215px;
 }
 
 ion-toolbar {
@@ -152,7 +153,7 @@ ion-toolbar {
 .collapsesMenu-logo {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   min-height: 70px;
 }
 
