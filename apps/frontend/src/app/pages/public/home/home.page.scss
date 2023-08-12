@@ -171,8 +171,11 @@ ion-header {
   font-weight: 400;
   line-height: normal;
   text-align: center;
-  // margin-top: 1rem;
-  margin-bottom: 3rem;
+  background: #000;
+  color: #fff;
+  // margin-bottom: 1rem;
+  padding-top: 2.12rem;
+  padding-bottom: 2.12rem;
 
   a {
     background: var(--ion-color-brand);
@@ -180,6 +183,44 @@ ion-header {
     -webkit-text-fill-color: transparent;
   }
 }
+
+.take-a-test {
+  display: flex;
+  background: var(--ion-color-brand);
+  align-items: center;
+  padding: 1.19rem;
+  gap: 4.69rem;
+
+  .take-a-test-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 36.625rem;
+  }
+
+  .take-a-test-title {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 5.125rem;
+    /* 117.143% */
+    letter-spacing: -0.13125rem;
+  }
+
+  .take-a-test-subtitle {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem;
+    /* 150% */
+    opacity: 0.7;
+  }
+}
+
 
 .how {
 
@@ -210,55 +251,61 @@ ion-header {
   grid-template-columns: repeat(1, 100%);
   padding: 1rem;
   gap: 5rem;
-}
 
-.how-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-
-  .how-card-count {
-    width: 4rem;
-    height: 4rem;
-    flex-shrink: 0;
-    stroke-width: 1px;
-    color: #FF521C;
+  .how-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid #FF521C;
-    border-radius: 50%;
+    gap: 2rem;
 
-    &.full {
-      background: #FF521C;
-      color: #fff;
+    .how-card-count {
+      width: 4rem;
+      height: 4rem;
+      flex-shrink: 0;
+      stroke-width: 1px;
+      color: #FF521C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #FF521C;
+      border-radius: 50%;
+
+      &.full {
+        background: #FF521C;
+        color: #fff;
+      }
     }
-  }
 
-  .how-card-title {
-    font-size: 2.2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 3rem;
-    /* 119.048% */
-    letter-spacing: -0.07875rem;
+    .how-card-title {
+      font-size: 2.2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3rem;
+      /* 119.048% */
+      letter-spacing: -0.07875rem;
 
-    span {
-      background: var(--ion-color-brand);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      span {
+        background: var(--ion-color-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
-  }
 
-  .how-card-subtitle {
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.875rem;
+    .how-card-subtitle {
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.875rem;
+    }
   }
 }
 
+
 @media (min-width: 1239px) {
+
+  .take-a-test {
+    padding-left: 7.5rem;
+    padding-right: 0rem;
+  }
 
   .how-card-container {
     padding-left: 7.5rem;
