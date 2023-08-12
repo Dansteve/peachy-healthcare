@@ -68,12 +68,66 @@
   font-family: "JosefinSans-Thin";
 }
 
+//
+
+@font-face {
+  font-family: "DMSans-Regular";
+  src: url("../assets/fonts/DMSans/DMSans-Regular.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.DMSans-Regular {
+  font-family: "DMSans-Regular";
+}
+
+@font-face {
+  font-family: "DMSans-Medium";
+  src: url("../assets/fonts/DMSans/DMSans-Medium.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.DMSans-Medium {
+  font-family: "DMSans-Medium";
+}
+
+@font-face {
+  font-family: "DMSans-Bold";
+  src: url("../assets/fonts/DMSans/DMSans-Bold.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.DMSans-Bold {
+  font-family: "DMSans-Bold";
+}
+
+
+@font-face {
+  font-family: "DMSans-Italic";
+  src: url("../assets/fonts/DMSans/DMSans-Italic.ttf") format("truetype");
+  text-rendering: optimizeLegibility;
+}
+
+.DMSans-Italic {
+  font-family: "DMSans-Italic";
+}
+
+
 :root {
   -webkit-font-smoothing: antialiased;
-  --ion-font-family: "JosefinSans-Regular", "JosefinSans-Medium",
-    "JosefinSans-Bold", sans-serif;
-  --ion-default-font: "JosefinSans-Regular", "JosefinSans-Medium",
-    "JosefinSans-Bold", sans-serif;
+  --ion-font-family: "JosefinSans-Regular",
+    "JosefinSans-Medium",
+    "JosefinSans-Bold",
+    "DMSans-Regular",
+    "DMSans-Medium",
+    "DMSans-Bold",
+    sans-serif;
+  --ion-default-font: "JosefinSans-Regular",
+    "JosefinSans-Medium",
+    "JosefinSans-Bold",
+    "DMSans-Regular",
+    "DMSans-Medium",
+    "DMSans-Bold",
+    sans-serif;
   font-family: var(--ion-font-family);
   line-height: 1.3;
   letter-spacing: 0.02em;

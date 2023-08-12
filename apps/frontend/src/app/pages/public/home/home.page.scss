@@ -48,7 +48,7 @@ ion-header {
 
 
 .container {
-  font-family: DM Sans;
+  font-family: "DMSans-Regular" !important;
   display: flex;
   flex-direction: column;
   gap: 6rem;
@@ -200,7 +200,7 @@ ion-header {
 
   .take-a-test-title {
     color: #FFF;
-    font-family: DM Sans;
+    font-family: "DMSans-Regular";
     font-size: 4.375rem;
     font-style: normal;
     font-weight: 700;
@@ -211,7 +211,7 @@ ion-header {
 
   .take-a-test-subtitle {
     color: #FFF;
-    font-family: DM Sans;
+    font-family: "DMSans-Regular";
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
