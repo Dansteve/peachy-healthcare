@@ -16,7 +16,7 @@ const routes: Routes = [
       special: DataResolverService
     },
     canActivate: [AuthGuard],
-    // loadChildren: () => import('./smart-menu/smart-menu.module').then(m => m.SmartMenuPageModule)
+    loadChildren: () => import('./smart-menu/smart-menu.module').then(m => m.SmartMenuPageModule)
   },
 ];
 

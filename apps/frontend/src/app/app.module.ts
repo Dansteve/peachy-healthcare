@@ -2,7 +2,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, TitleStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { Drivers } from '@ionic/storage';
@@ -15,6 +15,7 @@ import { NgPipesModule } from 'ngx-pipes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
+import { CustomTitleStrategy } from './services/custom-title-strategy/custom-title-strategy.service';
 
 
 @NgModule({
@@ -40,6 +41,10 @@ import { AuthInterceptor } from './interceptor/auth-interceptor';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
+    {
+      provide: TitleStrategy,
+      useClass: CustomTitleStrategy,
+    },
   ],
   bootstrap: [AppComponent],
 })
