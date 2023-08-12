@@ -129,5 +129,13 @@ export class ApiService extends AppCoreService {
     return this.getRequestFromServeWithLocalFallback(`${environment.getAddress.url}/get/${id}?api-key=${environment.getAddress.key}`, `get_address_info_${id}`);
   }
 
+  async getUserProfile(): Promise<GenericApiResponse<AnyInfo> | ApiErrorResponse> {
+    return this.getRequestFromServeWithLocalFallback(`${this.apiBaseUrl}/profile`, `get_user_profile`);
+  }
+
+  async profileSettingGetPicture(): Promise<GenericApiResponse<AnyInfo> | ApiErrorResponse> {
+    return this.getRequestFromServeWithLocalFallback(`${this.apiBaseUrl}/profile/setting/get-picture`, `profile_setting_get_picture`);
+  }
+
 
 }
