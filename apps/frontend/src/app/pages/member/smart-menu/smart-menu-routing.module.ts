@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../../../guard/auth.guard';
+// import { AuthGuard } from '../../../guard/auth.guard';
 import { DataResolverService } from '../../../services/resolver/data-resolver.service';
 import { SmartMenuPage } from './smart-menu.page';
 
@@ -17,7 +17,7 @@ const routes: Routes = [
       {
         path: 'dashboard',
         title: 'Dashboard',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         resolve: {
           special: DataResolverService,
         },
@@ -27,7 +27,7 @@ const routes: Routes = [
       {
         path: 'profile',
         title: 'Profile',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         resolve: {
           special: DataResolverService,
         },
@@ -37,7 +37,7 @@ const routes: Routes = [
       {
         path: 'my-test',
         title: 'My Test',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         resolve: {
           special: DataResolverService,
         },
