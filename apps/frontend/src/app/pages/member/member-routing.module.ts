@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../../guard/auth.guard';
+// import { AuthGuard } from '../../guard/auth.guard';
 import { DataResolverService } from '../../services/resolver/data-resolver.service';
 
 
@@ -15,8 +15,8 @@ const routes: Routes = [
     resolve: {
       special: DataResolverService
     },
-    canActivate: [AuthGuard],
-    // loadChildren: () => import('./smart-menu/smart-menu.module').then(m => m.SmartMenuPageModule)
+    // canActivate: [AuthGuard],
+    loadChildren: () => import('./smart-menu/smart-menu.module').then(m => m.SmartMenuPageModule)
   },
 ];
 

@@ -24,6 +24,7 @@ export class LoginPage implements OnInit {
     rememberMe: false
   };
   showPassword = false;
+  isLoading = false;
 
   readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
@@ -61,7 +62,19 @@ export class LoginPage implements OnInit {
     this.navController.navigateForward(link, { animated: false });
   }
 
+  goToMember(page = '') {
+    const link = `/member/${page}`;
+    // this.router.navigate([link],);
+    this.navController.navigateForward(link, { animated: false });
+  }
+
+
   login() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+      this.goToMember('dashboard');
+    }, 2000);
   }
 
 }

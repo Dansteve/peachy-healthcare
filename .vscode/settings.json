@@ -16,7 +16,7 @@
     "idcard",
     "JosefinSansswitch",
     "lockedproductstat",
-    "microvest",
+    "Peachy",
     "Ozioma",
     "pinsetup",
     "postreplies",
@@ -78,7 +78,7 @@
     "source.fixAll.sortJSON": true,
     "source.organizeImports": true
   },
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "files.insertFinalNewline": true,
   "html.autoClosingTags": true,
   "html.format.enable": true,

@@ -5,6 +5,10 @@
 export const environment = {
   production: false,
   apiBaseUrl: '/api',
+  getAddress: {
+    url: 'https://api.getAddress.io',
+    key: '4u84h8epNEqKtp5hOIsJbQ40108'
+  },
   isPwa: true,
   appVerCode: '1.0',
   defaultImageUrl: '',

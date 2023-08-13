@@ -1,27 +1,248 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title> Blank </ion-title>
+    <div class="header-row ion-padding">
+      <div class="header-row-left">
+        <a class="nav-logo" href="#index">
+          <ion-img src="assets/img/peachy-side.png"></ion-img>
+        </a>
+
+        <div class="nav-links  ion-hide-lg-down">
+          <a href="#about">About</a>
+          <a href="#how">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faqs">FAQs</a>
+        </div>
+      </div>
+      <div class="header-row-right">
+        <ion-button (click)="goTo('login')" fill="outline" color="dark" size="small">
+          <ion-label>Login</ion-label>
+        </ion-button>
+        <ion-button (click)="goTo('register')" color="brand" size="small">
+          <ion-label>Sign up</ion-label>
+        </ion-button>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container ion-padding-top">
+    <div class="hero" id="index">
+      <div class="hero-content">
+        <div class="hero-title">Understand how <span>medicines</span> work in your body</div>
+        <div class="hero-subtitle">Enjoy life without wondering whether your medicine works or if you will get side effects. With our personalised genetic test you will know which medicine will be the most efficient for you.</div>
+        <div>
+          <ion-button (click)="goTo('register')" color="brand">
+            <ion-label>Get Started</ion-label>
+          </ion-button>
+        </div>
+      </div>
+      <div class="hero-img ion-hide-lg-down">
+        <ion-img src="assets/img/hero.png"></ion-img>
+      </div>
+    </div>
 
-  <div id="container">
-    <h1>Welcome frontend!</h1>
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components"
-        >UI Components</a
-      >
-    </p>
+    <div class="about" id="about">
+      <div class="about-img ion-hide-lg-down">
+        <ion-img src="assets/img/about.png"></ion-img>
+      </div>
+      <div class="about-content">
+        <div class="about-title">Features of <span>Peachy healthcare</span></div>
+        <div class="">
+          <ion-row>
+            <ion-col size="6">
+              <div class="feature-card">
+                <div class="feature-img">
+                  <ion-img src="assets/img/hearth.png"></ion-img>
+                </div>
+                <div class="feature-title"> Take a Test</div>
+                <div class="feature-subtitle">An easy at home saliva test will give us an inside look into your pharmaco-genes (genes which metabolise medicines).
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="feature-card">
+                <div class="feature-img">
+                  <ion-img src="assets/img/membership.png"></ion-img>
+                </div>
+                <div class="feature-title"> Membership</div>
+                <div class="feature-subtitle">Get your results and start monitoring the effects of your medicines.
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-margin-top-16">
+            <ion-col size="6">
+              <div class="feature-card">
+                <div class="feature-img">
+                  <ion-img src="assets/img/health_history.png"></ion-img>
+                </div>
+                <div class="feature-title"> Health History</div>
+                <div class="feature-subtitle">Take our simple test to help our results be focussed and individual
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="feature-card">
+                <div class="feature-img">
+                  <ion-img src="assets/img/recommendation.png"></ion-img>
+                </div>
+                <div class="feature-title"> Recommendation</div>
+                <div class="feature-subtitle">Discover personalized recommendations for a tailored experience that matches your interests and preferences.
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+
+    <div class="take-a-test">
+      <div class="take-a-test-content">
+        <div class="take-a-test-title">Take a Test and get instant Result</div>
+        <div class="take-a-test-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi augue viverra ac vitae est commodo in urna.</div>
+        <div>
+          <ion-button (click)="goTo('login')" color="light">
+            <ion-label color="brand">Take a Test</ion-label>
+          </ion-button>
+        </div>
+      </div>
+      <div class="ion-hide-lg-down">
+        <ion-img src="assets/img/test.png"></ion-img>
+      </div>
+    </div>
+
+    <div class="how" id="how">
+      <div class="how-title">How it works</div>
+      <div class="how-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui id lobortis pretium blandit.</div>
+    </div>
+
+    <div class="how-card-container">
+      <div class="how-card">
+        <div class="how-card-count full">
+          01.
+        </div>
+        <div>
+          <div class="how-card-title">Create your <span>.Account</span></div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-count">
+          02.
+        </div>
+        <div>
+          <div class="how-card-title">Take a Test</div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-count">
+          03.
+        </div>
+        <div>
+          <div class="how-card-title">View Recommendation</div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-count">
+          04.
+        </div>
+        <div>
+          <div class="how-card-title">Health History</div>
+          <div class="how-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Platea ornare blandit est, pellentesque orci.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing" id="pricing">
+      <div class="pricing-content">
+        <div class="pricing-title">Pricing that works for you</div>
+        <div class="pricing-subtitle">Subscribe to our annual plan and <span>get 2 months free!</span></div>
+      </div>
+
+      <div class="pricing-segment">
+        <ion-segment value="year" [(ngModel)]="pricing">
+          <ion-segment-button value="year">
+            <ion-label>Annually</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="month">
+            <ion-label>Monthly</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <ion-row>
+        <ion-col sizeXl="4" sizeLg="6" size="12">
+          <div class="pricing-card">
+            <div class="pricing-card-top">
+              <div class="pricing-card-title">Basic Plan</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '24.99' : '2.49'}}</div>
+              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="w-full">
+                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                  <ion-label> Select plan </ion-label>
+                </ion-button>
+              </div>
+            </div>
+            <div class="pricing-card-bottom">
+              <div class="pricing-card-item" *ngFor="let item of basicPlan; let i=index">
+                <ion-icon src="assets/icon/check.svg"></ion-icon>
+                <span>{{item}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+
+        <ion-col sizeXl="4" sizeLg="6" size="12">
+          <div class="pricing-card brand">
+            <div class="pricing-card-top brand">
+              <div class="pricing-card-title">Enhanced Plan</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '52.99' : '5.29'}}</div>
+              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="w-full">
+                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                  <ion-label> Select plan </ion-label>
+                </ion-button>
+              </div>
+            </div>
+            <div class="pricing-card-bottom">
+              <div class="pricing-card-item" *ngFor="let item of enhancedPlan; let i=index">
+                <ion-icon src="assets/icon/check.svg"></ion-icon>
+                <span>{{item}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+
+
+        <ion-col sizeXl="4" sizeLg="6" size="12">
+          <div class="pricing-card">
+            <div class="pricing-card-top">
+              <div class="pricing-card-title">Premium Plan</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '100.99' : '10.49'}}</div>
+              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="w-full">
+                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                  <ion-label> Select plan </ion-label>
+                </ion-button>
+              </div>
+            </div>
+            <div class="pricing-card-bottom">
+              <div class="pricing-card-item" *ngFor="let item of premiumPlan; let i=index">
+                <ion-icon src="assets/icon/check.svg"></ion-icon>
+                <span>{{item}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="copyright ion-padding">&copy; Peachy healthcare by <a href="https://www.linkedin.com/in/dansteve-adekanbi/">Dansteve Adekanbi (2023)</a></div>
   </div>
 </ion-content>

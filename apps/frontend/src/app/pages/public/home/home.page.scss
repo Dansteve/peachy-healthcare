@@ -1,27 +1,568 @@
-#container {
+ion-toolbar,
+ion-header {
+  --background: #fff;
+  background: #fff;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: #18191F;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.25rem;
+      text-decoration: none;
+
+      &:hover {
+        color: #18191F;
+        background: var(--ion-color-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .header-row-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .header-row-right {
+    display: flex;
+    gap: 1rem;
+  }
+
+}
+
+
+.container {
+  font-family: "DMSans-Regular" !important;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.hero {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  .hero-content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 4.125rem;
+      letter-spacing: -0.12rem;
+
+      span {
+        background: var(--ion-color-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2rem;
+    }
+  }
+
+  .hero-img {
+    flex: 1;
+  }
+}
+
+.about {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  // align-items: center;
+  gap: 2rem;
+
+  .about-content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .about-title {
+      font-size: 3.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 4.125rem;
+      letter-spacing: -0.12rem;
+
+      span {
+        background: var(--ion-color-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .about-subtitle {
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2rem;
+    }
+  }
+
+  .about-img {
+    flex: 1;
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.94rem;
+
+  .feature-title {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.5rem;
+    /* 125% */
+    letter-spacing: -0.06rem;
+  }
+
+  .feature-subtitle {
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+    /* 144.444% */
+  }
+
+  .feature-img {
+    ion-img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+
+.copyright {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   text-align: center;
+  background: #000;
+  color: #fff;
+  // margin-bottom: 1rem;
+  padding-top: 2.12rem;
+  padding-bottom: 2.12rem;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  a {
+    background: var(--ion-color-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.take-a-test {
+  display: flex;
+  background: var(--ion-color-brand);
+  align-items: center;
+  padding: 1.19rem;
+  gap: 4.69rem;
+
+  .take-a-test-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 36.625rem;
+  }
+
+  .take-a-test-title {
+    color: #FFF;
+    font-family: "DMSans-Regular";
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 5.125rem;
+    /* 117.143% */
+    letter-spacing: -0.13125rem;
+  }
+
+  .take-a-test-subtitle {
+    color: #FFF;
+    font-family: "DMSans-Regular";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem;
+    /* 150% */
+    opacity: 0.7;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
 
-  color: #8c8c8c;
+.how {
 
-  margin: 0;
+  .how-title {
+    color: #191D2A;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 5.125rem;
+    letter-spacing: -0.13125rem;
+    text-align: center;
+  }
+
+  .how-subtitle {
+    color: #191D2A;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem;
+    text-align: center;
+    max-width: 32.3125rem;
+    margin: 0 auto;
+  }
 }
 
-#container a {
-  text-decoration: none;
+.how-card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  padding: 1rem;
+  gap: 5rem;
+
+  .how-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .how-card-count {
+      width: 4rem;
+      height: 4rem;
+      flex-shrink: 0;
+      stroke-width: 1px;
+      color: #FF521C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #FF521C;
+      border-radius: 50%;
+
+      &.full {
+        background: #FF521C;
+        color: #fff;
+      }
+    }
+
+    .how-card-title {
+      font-size: 2.2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3rem;
+      /* 119.048% */
+      letter-spacing: -0.07875rem;
+
+      span {
+        background: var(--ion-color-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .how-card-subtitle {
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.875rem;
+    }
+  }
+}
+
+.pricing {
+  display: flex;
+  gap: 2.12rem;
+  flex-direction: column;
+
+  
+
+  .pricing-content {
+    display: flex;
+    gap: 1.12rem;
+    flex-direction: column;
+
+    .pricing-title {
+      color: #011121;
+      text-align: center;
+      font-family: DMSans-Regular;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 3.125rem;
+    }
+
+    .pricing-subtitle {
+      color: #555C63;
+      text-align: center;
+      font-family: DMSans-Regular;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.75rem;
+
+      span {
+        color: #011121;
+      }
+    }
+  }
+}
+
+.pricing-segment {
+  width: 23.9375rem;
+  height: 4.7525rem;
+  margin: 0 auto;
+
+  ion-segment {
+    height: 4.7525rem;
+    border-radius: 2.16rem;
+    --background: #fff;
+    padding: 0.44rem;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+
+    ion-segment-button {
+      --border-radius: 2.16rem;
+      color: #555C63;
+
+      ion-label {
+        font-family: DMSans-Regular;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.875rem;
+      }
+    }
+  }
+
+  ion-segment-button::part(indicator-background) {
+    background: var(--ion-color-brand);
+  }
+
+  ion-segment-button.ios {
+    --color: #555C63;
+  }
+
+  /* Material Design styles */
+  .segment-button-checked::part(native) {
+    color: #fff;
+  }
+
+  .segment-button-checked.md::part(native) {
+    color: var(--ion-color-brand);
+  }
+}
+
+.pricing-card {
+  min-height: 45.125rem;
+
+  &.brand{
+  box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .pricing-card-top {
+    background: #F6FBFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.81rem;
+    padding: 2.38rem 1.75rem;
+
+    .pricing-card-title {
+      color: #011121;
+      text-align: center;
+      font-size: 1.375rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .pricing-card-amount {
+      color: #011121;
+      text-align: center;
+      font-size: 2.375rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .pricing-card-type {
+      color: #011121;
+      text-align: center;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75rem;
+      margin-top: -0.75rem;
+    }
+
+    &.brand {
+      background: var(--ion-color-brand);
+
+      .pricing-card-title {
+        color: #fff;
+      }
+
+      .pricing-card-amount {
+        color: #fff;
+      }
+
+      .pricing-card-type {
+        color: #fff;
+      }
+    }
+  }
+
+  .pricing-card-bottom {
+    background: #fff;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .pricing-card-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      color: #555C63;
+      font-family: DMSans-Regular;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+@media (min-width: 1239px) {
+
+  .pricing {
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+  }
+
+  .take-a-test {
+    padding-left: 7.5rem;
+    padding-right: 0rem;
+  }
+
+  .how-card-container {
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    .how-card-title {
+      font-size: 2.625rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3.125rem;
+      /* 119.048% */
+      letter-spacing: -0.07875rem;
+
+      span {
+        background: var(--ion-color-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .header-row {
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+  }
+
+  .hero {
+    padding-left: 7.5rem;
+    padding-right: 0;
+
+    .hero-content {
+      .hero-title {
+        font-size: 4.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 6.125rem;
+
+        span {
+          background: var(--ion-color-brand);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2rem;
+      }
+    }
+
+    .hero-img {
+      ion-img {
+        --height: 25rem;
+      }
+    }
+  }
+
+  .about {
+    padding-right: 7.5rem;
+    padding-left: 0;
+
+    .about-content {
+      .about-title {
+        font-size: 4.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 6.125rem;
+
+        span {
+          background: var(--ion-color-brand);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .about-subtitle {
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2rem;
+      }
+    }
+
+    .about-img {
+      ion-img {
+        --height: 25rem;
+      }
+    }
+  }
 }

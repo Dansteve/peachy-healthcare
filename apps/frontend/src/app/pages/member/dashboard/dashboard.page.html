@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Dashboard</ion-title> -->
+    <ion-buttons slot="end" class="ion-margin-right-16">
+      <ion-button>
+        <ion-icon slot="icon-only" src="assets/icon/notification.svg"></ion-icon>
+      </ion-button>
+      <ion-button color="dark">
+        <ion-img slot="start" src="assets/img/avatar.png"></ion-img>
+        <div class="profile-info ion-margin-left-8">
+          <div class="title">DAN-01234567</div>
+          <div class="name">
+            <div>Dansteve</div>
+            <div><ion-img slot="icon-only" src="assets/icon/down.svg"></ion-img></div>
+          </div>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-container">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding" sizeXl="8" sizeMd="12">
+        <ion-row>
+          <ion-col size="12" class="ion-margin-bottom-40">
+            <div class="welcome-card">
+              <div class="welcome-content">
+                <div class="welcome-title">Welcome Dansteve 😊</div>
+                <div class="welcome-subtitle">Manage all your activities, Your can start by taking your first Test today by clicking the button today </div>
+              </div>
+              <div class="ion-hide-lg-down">
+                <ion-img slot="icon-only" src="assets/img/welcome.png"></ion-img>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="content-title ion-padding-left-4">For you</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom-10">
+          <ion-col sizeLg="6">
+            <div class="action-card">
+              <div class="feature-img">
+                <ion-img src="assets/img/hearth.png"></ion-img>
+              </div>
+              <div class="feature-content">
+                <div class="feature-title"> Take a Test</div>
+                <div class="feature-subtitle">An easy at home saliva test will give us an inside look into your pharmaco-genes (genes which metabolise medicines).
+                </div>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col sizeLg="6">
+            <div class="action-card">
+              <div class="feature-img">
+                <ion-img src="assets/img/membership.png"></ion-img>
+              </div>
+              <div class="feature-content">
+                <div class="feature-title"> Membership</div>
+                <div class="feature-subtitle">Get your results and start monitoring the effects of your medicines.
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom-10">
+          <ion-col sizeLg="6">
+            <div class="action-card">
+              <div class="feature-img">
+                <ion-img src="assets/img/health_history.png"></ion-img>
+              </div>
+              <div class="feature-content">
+                <div class="feature-title"> Health History</div>
+                <div class="feature-subtitle">Take our simple test to help our results be focussed and individual
+                </div>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col sizeLg="6">
+            <div class="action-card">
+              <div class="feature-img">
+                <ion-img src="assets/img/recommendation.png"></ion-img>
+              </div>
+              <div class="feature-content">
+                <div class="feature-title"> Recommendation</div>
+                <div class="feature-subtitle">Discover personalized recommendations for a tailored experience that matches your interests and preferences.
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="ion-no-padding ion-hide-lg-down" sizeXl="4" sizeMd="12">
+        <div class="date-card">
+          <div>
+            <ion-datetime [isDateEnabled]="isWeekday" color="brand" [value]="today"></ion-datetime>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
