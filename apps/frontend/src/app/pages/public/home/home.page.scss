@@ -299,8 +299,175 @@ ion-header {
   }
 }
 
+.pricing {
+  display: flex;
+  gap: 2.12rem;
+  flex-direction: column;
+
+  
+
+  .pricing-content {
+    display: flex;
+    gap: 1.12rem;
+    flex-direction: column;
+
+    .pricing-title {
+      color: #011121;
+      text-align: center;
+      font-family: DMSans-Regular;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 3.125rem;
+    }
+
+    .pricing-subtitle {
+      color: #555C63;
+      text-align: center;
+      font-family: DMSans-Regular;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.75rem;
+
+      span {
+        color: #011121;
+      }
+    }
+  }
+}
+
+.pricing-segment {
+  width: 23.9375rem;
+  height: 4.7525rem;
+  margin: 0 auto;
+
+  ion-segment {
+    height: 4.7525rem;
+    border-radius: 2.16rem;
+    --background: #fff;
+    padding: 0.44rem;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+
+    ion-segment-button {
+      --border-radius: 2.16rem;
+      color: #555C63;
+
+      ion-label {
+        font-family: DMSans-Regular;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.875rem;
+      }
+    }
+  }
+
+  ion-segment-button::part(indicator-background) {
+    background: var(--ion-color-brand);
+  }
+
+  ion-segment-button.ios {
+    --color: #555C63;
+  }
+
+  /* Material Design styles */
+  .segment-button-checked::part(native) {
+    color: #fff;
+  }
+
+  .segment-button-checked.md::part(native) {
+    color: var(--ion-color-brand);
+  }
+}
+
+.pricing-card {
+  min-height: 45.125rem;
+
+  &.brand{
+  box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .pricing-card-top {
+    background: #F6FBFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.81rem;
+    padding: 2.38rem 1.75rem;
+
+    .pricing-card-title {
+      color: #011121;
+      text-align: center;
+      font-size: 1.375rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .pricing-card-amount {
+      color: #011121;
+      text-align: center;
+      font-size: 2.375rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .pricing-card-type {
+      color: #011121;
+      text-align: center;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75rem;
+      margin-top: -0.75rem;
+    }
+
+    &.brand {
+      background: var(--ion-color-brand);
+
+      .pricing-card-title {
+        color: #fff;
+      }
+
+      .pricing-card-amount {
+        color: #fff;
+      }
+
+      .pricing-card-type {
+        color: #fff;
+      }
+    }
+  }
+
+  .pricing-card-bottom {
+    background: #fff;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .pricing-card-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      color: #555C63;
+      font-family: DMSans-Regular;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.75rem;
+    }
+  }
+}
 
 @media (min-width: 1239px) {
+
+  .pricing {
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+  }
 
   .take-a-test {
     padding-left: 7.5rem;

@@ -19,6 +19,41 @@ export class HomePage implements OnInit {
 
   readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
+  pricing = 'year';
+  basicPlan = [
+    'Personalized Health and Medication Report',
+    'Pharmacogenetic Analysis',
+    'Lifestyle Questionnaire Analysis',
+    'Personalized Medication Recommendations',
+    'Lifestyle Guidance',
+    'Email Support'
+  ]
+  enhancedPlan = [
+    'Personalized Health and Medication Report',
+    'Pharmacogenetic Analysis & Insights',
+    'Lifestyle Questionnaire Analysis',
+    'Personalized Medication Recommendations',
+    'Lifestyle Guidance',
+    'Lifestyle Assessment and Recommendations',
+    'Supportive Supplement Recommendations',
+    '1 Phone Consultation with a Health Expert',
+    'Access to Webinars on Health and Lifestyle',
+    'Email Support'
+  ];
+  premiumPlan = [
+    'Personalized Health and Medication Report',
+    'Pharmacogenetic Analysis',
+    'Lifestyle Questionnaire Analysis',
+    'Personalized Medication Recommendations',
+    'Lifestyle Guidance',
+    '2 Additional Phone Consultations with Experts',
+    'Ongoing Medication Monitoring & Adjustments',
+    'Quarterly Genetic Update Reports',
+    'Exclusive Access to Health Workshops',
+    'Dedicated Customer Success Manager',
+    'Phone and Email Support',
+    'Email Support'
+  ]
 
   constructor(
     public screenSizeService: ScreenSizeService,

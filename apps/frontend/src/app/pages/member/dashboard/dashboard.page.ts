@@ -6,6 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage {
+
+
+  isWeekday = (dateString: string) => {
+    const date = new Date(dateString);
+    const utcDay = date.getUTCDay();
+
+    /**
+     * Date will be enabled if it is not
+     * Sunday or Saturday
+     */
+    return utcDay !== 0 && utcDay !== 6;
+  };
+
+  today = new Date().toISOString();
+
   constructor() {}
 
   /**
@@ -14,4 +29,5 @@ export class DashboardPage {
   getClassName() {
     return 'DashboardPage';
   }
+
 }

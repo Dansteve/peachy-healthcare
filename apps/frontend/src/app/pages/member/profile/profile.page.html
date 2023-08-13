@@ -20,4 +20,113 @@
 </ion-header>
 
 <ion-content>
+  <div class="content-container">
+
+    <div class="profile-card">
+      <div class="profile-card-left">
+        <div class="profile-img">
+          <img src="assets/img/avatar-full.png"/>
+        </div>
+        <div class="profile-info">
+          <div class="profile-name">Dansteve Adekanbi</div>
+          <div class="profile-code">DAN- 01234567</div>
+        </div>
+      </div>
+
+      <div class="profile-card-right">
+
+        <div class="profile-details-title">
+          Profile Details
+        </div>
+
+        <ion-row>
+          <ion-col size="3">
+            <div class="data-title">
+              First Name:
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="data-value">
+              Dansteve
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3">
+            <div class="data-title">
+              Last Name:
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="data-value">
+              Adekanbi
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3">
+            <div class="data-title">
+              Age:
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="data-value">
+              35
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3">
+            <div class="data-title">
+              Phone Number:
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="data-value">
+              +44 1234 567890
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3">
+            <div class="data-title">
+              Email Address:
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="data-value">
+              danstevea@gmail.com
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3">
+            <div class="data-title">
+              Address:
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="data-value">
+              15 Bartholomew Row, Birmingham B5 5JU
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <div>
+          <ion-button color="brand" (click)="requestTodeleteMyAccount()">
+            <ion-label>Delete My account</ion-label>
+            <ion-icon *ngIf="!isLoading" slot="end" name="arrow-forward-outline"></ion-icon>
+            <ion-spinner class="ion-margin-x-8" *ngIf="isLoading" slot="end"></ion-spinner>
+
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </ion-content>

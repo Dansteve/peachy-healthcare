@@ -211,8 +211,8 @@ export class SmartMenuPage implements OnInit {
     this.currentUrl = page;
     this.navController.navigateBack(`/member/${page}`);
     console.log(page);
-    this.profileSettingGetPicture();
-    this.getUserProfile();
+    // this.profileSettingGetPicture();
+    // this.getUserProfile();
     this.isPostOpen = false;
   }
 
@@ -323,7 +323,7 @@ export class SmartMenuPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.getUserProfile();
+    // this.getUserProfile();
     this.checkAuth();
   }
 

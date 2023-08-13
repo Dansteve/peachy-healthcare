@@ -159,6 +159,90 @@
       </div>
     </div>
 
+    <div class="pricing" id="pricing">
+      <div class="pricing-content">
+        <div class="pricing-title">Pricing that works for you</div>
+        <div class="pricing-subtitle">Subscribe to our annual plan and <span>get 2 months free!</span></div>
+      </div>
+
+      <div class="pricing-segment">
+        <ion-segment value="year" [(ngModel)]="pricing">
+          <ion-segment-button value="year">
+            <ion-label>Annually</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="month">
+            <ion-label>Monthly</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <ion-row>
+        <ion-col sizeXl="4" sizeLg="6" size="12">
+          <div class="pricing-card">
+            <div class="pricing-card-top">
+              <div class="pricing-card-title">Basic Plan</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '24.99' : '2.49'}}</div>
+              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="w-full">
+                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                  <ion-label> Select plan </ion-label>
+                </ion-button>
+              </div>
+            </div>
+            <div class="pricing-card-bottom">
+              <div class="pricing-card-item" *ngFor="let item of basicPlan; let i=index">
+                <ion-icon src="assets/icon/check.svg"></ion-icon>
+                <span>{{item}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+
+        <ion-col sizeXl="4" sizeLg="6" size="12">
+          <div class="pricing-card brand">
+            <div class="pricing-card-top brand">
+              <div class="pricing-card-title">Enhanced Plan</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '52.99' : '5.29'}}</div>
+              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="w-full">
+                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                  <ion-label> Select plan </ion-label>
+                </ion-button>
+              </div>
+            </div>
+            <div class="pricing-card-bottom">
+              <div class="pricing-card-item" *ngFor="let item of enhancedPlan; let i=index">
+                <ion-icon src="assets/icon/check.svg"></ion-icon>
+                <span>{{item}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+
+
+        <ion-col sizeXl="4" sizeLg="6" size="12">
+          <div class="pricing-card">
+            <div class="pricing-card-top">
+              <div class="pricing-card-title">Premium Plan</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '100.99' : '10.49'}}</div>
+              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="w-full">
+                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                  <ion-label> Select plan </ion-label>
+                </ion-button>
+              </div>
+            </div>
+            <div class="pricing-card-bottom">
+              <div class="pricing-card-item" *ngFor="let item of premiumPlan; let i=index">
+                <ion-icon src="assets/icon/check.svg"></ion-icon>
+                <span>{{item}}</span>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
     <div class="copyright ion-padding">&copy; Peachy healthcare by <a href="https://www.linkedin.com/in/dansteve-adekanbi/">Dansteve Adekanbi (2023)</a></div>
   </div>
 </ion-content>
