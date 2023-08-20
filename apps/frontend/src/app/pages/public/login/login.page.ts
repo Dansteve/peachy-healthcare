@@ -95,6 +95,7 @@ export class LoginPage implements OnInit {
       })
       .catch(async (err: ApiErrorResponse): Promise<void> => {
         this.apiService.errorAlert(err.message);
+        this.isLoading = false;
         // await loading.dismiss();
       });
   }

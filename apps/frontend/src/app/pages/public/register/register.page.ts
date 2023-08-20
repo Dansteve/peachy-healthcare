@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { SignUpPayload } from '@peachy-healthcare/app-interface';
+import { ApiErrorResponse, AuthenticatedToken, GenericApiResponse, SignUpPayload } from '@peachy-healthcare/app-interface';
 import { environment } from '../../../../environments/environment';
 import { ApiService } from '../../../services/api/api.service';
 import { FormValidatorService } from '../../../services/form-validator/form-validator.service';
 import { HelperMethodsService } from '../../../services/helper-methods/helper-methods.service';
 import { ScreenSizeService } from '../../../services/screen-size/screen-size.service';
-
 
 @Component({
   selector: 'peachy-healthcare-register',
@@ -185,14 +184,47 @@ export class RegisterPage implements OnInit {
     }
   }
 
-  register() {
+  async register() {
+    // const loading = await this.apiService.getLoader();
+    // await loading.present();
     this.isLoading = true;
-    setTimeout(() => {
+    const registrationDetails = this.userRegistrationForm.value;
+    this.helperMethods.promiseTimeout(this.apiService.register(registrationDetails))
+      .then(async (res: GenericApiResponse<AuthenticatedToken>) => {
+        // await loading.dismiss(); 
       this.isLoading = false;
-      this.apiService.successToast('Registration Successful');
-      this.goTo('login');
-    }, 2000);
+        if (res.data === null) {
+          return this.apiService.errorToast(res.message);
+        }
+
+        const storeToken = await this.storeAuthenticatedLocalData(res);
+        if (storeToken) {
+          const dashboardLink = `/member/dashboard`;
+          this.navController.navigateRoot(dashboardLink);
+        } else {
+          const message = 'Something went wrong. Please try again later.';
+          this.apiService.errorToast(message);
+        }
+
+        return;
+        // await loading.dismiss(); 
+      })
+      .catch(async (err: ApiErrorResponse): Promise<void> => {
+        this.apiService.errorAlert(err.message);
+        this.isLoading = false;
+        // await loading.dismiss();
+      });
   }
+
+  async storeAuthenticatedLocalData(res: GenericApiResponse<AuthenticatedToken>) {
+    const authenticatedToken: AuthenticatedToken = { ...(res?.data as AuthenticatedToken) };
+    console.log(authenticatedToken);
+    await this.apiService.setAuthenticatedToken(authenticatedToken);
+    await this.apiService.setAuthenticatedPersistentUser(authenticatedToken);
+    await this.apiService.setAuthenticatedUser(authenticatedToken.user);
+    return authenticatedToken.token;
+  }
+
 
   async selectAddress(suggestion: any) {
     this.showSuggestions = false;
