@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
-import { initialUsers } from '@peachy-healthcare/app-constant';
+import { generateRandomString, initialUsers } from '@peachy-healthcare/app-constant';
 import { Address, User } from '@peachy-healthcare/app-interface';
 import { Repository } from 'typeorm';
 import { responseData } from '../util';
@@ -79,6 +79,7 @@ export class UsersService {
 
     const userAddress = await this.addressRepository.save({
       userId: userRecord.id,
+      userRef: generateRandomString(11, 3),
       ...user.address
     });
 
@@ -140,6 +141,14 @@ export class UsersService {
     });
 
     users.address = address;
+
+
+    if (!users.userRef) {
+      const userRef = generateRandomString(11, 3);
+      await this.userRepository.update({ id: users.id }, { userRef: userRef });
+      users.userRef = userRef
+    }
+
 
     return responseData<User>(users, 'User logged in successfully', HttpStatus.OK);
   }

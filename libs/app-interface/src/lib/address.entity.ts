@@ -87,4 +87,5 @@ export class Address extends BasedEntity {
   // add a column for the residential
   @Column({ nullable: true })
   residential: boolean;
+
 }

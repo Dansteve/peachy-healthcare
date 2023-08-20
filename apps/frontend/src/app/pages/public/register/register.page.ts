@@ -189,7 +189,7 @@ export class RegisterPage implements OnInit {
     // await loading.present();
     this.isLoading = true;
     const registrationDetails = this.userRegistrationForm.value;
-    this.helperMethods.promiseTimeout(this.apiService.register(registrationDetails))
+    this.helperMethods.promiseTimeout(this.apiService.register({ ...this.user, ...registrationDetails }))
       .then(async (res: GenericApiResponse<AuthenticatedToken>) => {
         // await loading.dismiss(); 
       this.isLoading = false;

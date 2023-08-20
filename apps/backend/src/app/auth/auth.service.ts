@@ -53,6 +53,12 @@ export class AuthService {
     if (users) {
       return responseData(null, 'User already exists', HttpStatus.CONFLICT);
     }
+
+    // user do not contain address object throw error
+    if (!user.address) {
+      return responseData(null, 'Address is missing', HttpStatus.BAD_REQUEST);
+    }
+
     const newUser = (await this.usersService.createUser(user)).data;
     const { password, ...result } = newUser;
     const payload = {

@@ -13,7 +13,7 @@ import { BasedEntity } from "./base.entity";
 @Entity('user')
 export class User extends BasedEntity {
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, })
     userRef?: string;
 
     @Column({ nullable: false })

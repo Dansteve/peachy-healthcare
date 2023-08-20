@@ -94,7 +94,8 @@ export const initialUsers: User[] = [
       "county": "West Midlands",
       "district": "Birmingham",
       "country": "England",
-      "residential": true
+      "residential": true,
+      search: ''
     }
   },
 ];
