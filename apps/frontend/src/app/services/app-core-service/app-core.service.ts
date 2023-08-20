@@ -941,15 +941,15 @@ export class AppCoreService {
       // icon: 'information-circle',
       cssClass: 'customToast customToast-success',
       buttons: [
-        {
-          side: 'start',
-          icon: 'assets/toast/success.svg',
-          cssClass: 'customToast-icon',
-          text: '',
-          handler: () => {
-            console.log('Cart Button Clicked');
-          }
-        },
+        // {
+        //   side: 'start',
+        //   icon: 'assets/toast/success.svg',
+        //   cssClass: 'customToast-icon',
+        //   text: '',
+        //   handler: () => {
+        //     console.log('Cart Button Clicked');
+        //   }
+        // },
         // {
         //   side: 'end',
         //   icon: 'assets/toast/close.svg',

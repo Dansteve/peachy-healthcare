@@ -14,20 +14,22 @@ import { MomentModule } from 'ngx-moment';
 import { NgPipesModule } from 'ngx-pipes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedComponentsModule } from './components/shared-components.module';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
 import { CustomTitleStrategy } from './services/custom-title-strategy/custom-title-strategy.service';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicStorageModule.forRoot({
       name: '__PHD109DB',
-      driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage]
+      driverOrder: [
+        CordovaSQLiteDriver._driver,
+        Drivers.IndexedDB,
+        Drivers.LocalStorage,
+      ],
     }),
     IonicModule.forRoot({
       mode: 'ios',
@@ -35,6 +37,7 @@ import { CustomTitleStrategy } from './services/custom-title-strategy/custom-tit
     NgPipesModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    SharedComponentsModule,
     MomentModule,
   ],
   providers: [
@@ -48,4 +51,4 @@ import { CustomTitleStrategy } from './services/custom-title-strategy/custom-tit
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

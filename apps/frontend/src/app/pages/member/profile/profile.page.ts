@@ -44,11 +44,17 @@ export class ProfilePage implements OnInit {
   }
 
 
-  requestTodeleteMyAccount() {
+  goToMember(page = '') {
+    const link = `/member/${page}`;
+    // this.router.navigate([link],);
+    this.navController.navigateForward(link, { animated: false });
+  }
+
+  requestToDeleteMyAccount() {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-      this.apiService.successToast('Account deleted successfully');
+      this.apiService.successToast('Your request has been sent to the admin. We will get back to you soon.');
       // this.goTo('login');
     }, 2000);
   }

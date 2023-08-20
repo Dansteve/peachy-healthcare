@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false, // true,
   apiBaseUrl: '/api',
   getAddress: {
     url: 'https://api.getAddress.io',
