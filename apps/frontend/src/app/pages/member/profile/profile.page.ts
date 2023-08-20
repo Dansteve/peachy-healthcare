@@ -2,6 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { ApiErrorResponse, GenericApiResponse, User } from '@peachy-healthcare/app-interface';
 import { environment } from '../../../../environments/environment';
 import { ApiService } from '../../../services/api/api.service';
 import { HelperMethodsService } from '../../../services/helper-methods/helper-methods.service';
@@ -18,6 +19,8 @@ export class ProfilePage implements OnInit {
   readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
   isLoading = false;
+  currentUser: User = {} as User;
+  copied = false;
 
   constructor(
     public screenSizeService: ScreenSizeService,
@@ -33,9 +36,29 @@ export class ProfilePage implements OnInit {
     });
   }
 
+
   ngOnInit() {
   }
 
+  ionViewDidEnter() {
+    this.apiService.getAuthenticatedUser().then((user: User) => {
+      this.currentUser = user;
+      console.log(this.currentUser);
+    }).catch((error: ApiErrorResponse) => {
+      console.log(error);
+    });
+    this.getProfile();
+  }
+
+  getProfile() {
+    this.helperMethods.promiseTimeout(this.apiService.getProfile())
+      .then(async (res: GenericApiResponse<User>) => {
+        this.currentUser = res.data;
+        this.apiService.setAuthenticatedUser(this.currentUser);
+      }).catch((err: ApiErrorResponse) => {
+        console.log(err);
+      });
+  }
 
   goTo(page = '') {
     const link = `/public/${page}`;

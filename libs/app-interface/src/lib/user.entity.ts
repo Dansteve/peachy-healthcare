@@ -5,6 +5,7 @@ export type GenderType = 'Male' | 'Female' | 'Non-Binary' | 'Other' | 'Prefer no
 
 import { Column, Entity, OneToOne } from "typeorm";
 import { Address } from "./address.entity";
+import { AddressPayload } from "./app-interface";
 import { BasedEntity } from "./base.entity";
 
 // create a new entity to represent a user
@@ -42,7 +43,7 @@ export class User extends BasedEntity {
     // @Column()
     @OneToOne(() => Address, { nullable: true })
     // @JoinColumn({ name: "bankAccount", referencedColumnName: "id" })
-    address?: any;
+    address?: AddressPayload;
 
 }
 

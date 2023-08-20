@@ -1,25 +1,36 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "declaration": false,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "strictPropertyInitialization": false,
-    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
-    "target": "es2015",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "module": "esnext",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
+    "moduleResolution": "node",
+    "noPropertyAccessFromIndexSignature": false,
     "paths": {
-      "@peachy-healthcare/app-interface": ["libs/app-interface/src/index.ts"]
-    }
+      "@peachy-healthcare/app-constant": [
+        "libs/app-constant/src/index.ts"
+      ],
+      "@peachy-healthcare/app-interface": [
+        "libs/app-interface/src/index.ts"
+      ]
+    },
+    "rootDir": ".",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictPropertyInitialization": false,
+    "target": "es2015"
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

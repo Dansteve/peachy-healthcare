@@ -9,8 +9,8 @@
           <img src="assets/img/avatar-full.png"/>
         </div>
         <div class="profile-info">
-          <div class="profile-name">Dansteve Adekanbi</div>
-          <div class="profile-code">DAN- 01234567</div>
+          <div class="profile-name">{{currentUser.firstName}} {{currentUser.lastName}}</div>
+          <div class="profile-code">{{currentUser.userRef}}</div>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
           </ion-col>
           <ion-col>
             <div class="data-value">
-              Dansteve
+              {{currentUser.firstName}}
             </div>
           </ion-col>
         </ion-row>
@@ -41,7 +41,7 @@
           </ion-col>
           <ion-col>
             <div class="data-value">
-              Adekanbi
+              {{currentUser.lastName}}
             </div>
           </ion-col>
         </ion-row>
@@ -54,7 +54,7 @@
           </ion-col>
           <ion-col>
             <div class="data-value">
-              35
+              {{currentUser.age}}
             </div>
           </ion-col>
         </ion-row>
@@ -67,7 +67,7 @@
           </ion-col>
           <ion-col>
             <div class="data-value">
-              +44 1234 567890
+              {{currentUser.phoneNumber}}
             </div>
           </ion-col>
         </ion-row>
@@ -80,7 +80,7 @@
           </ion-col>
           <ion-col>
             <div class="data-value">
-              danstevea@gmail.com
+              {{currentUser.username}}
             </div>
           </ion-col>
         </ion-row>
@@ -93,7 +93,7 @@
           </ion-col>
           <ion-col>
             <div class="data-value">
-              15 Bartholomew Row, Birmingham B5 5JU
+              {{currentUser.address?.building_number}} {{currentUser.address?.thoroughfare}} {{currentUser.address?.town_or_city}} {{currentUser.address?.county}} {{currentUser.address?.country}} {{currentUser.address?.postcode}}
             </div>
           </ion-col>
         </ion-row>

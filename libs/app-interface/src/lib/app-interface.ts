@@ -72,7 +72,7 @@ export interface GenericApiResponse<TType = unknown> {
   readonly status: number;
   readonly message: string;
   readonly title: string;
-  readonly data?: TType;
+  readonly data: TType;
 }
 
 export interface ApiErrorResponse extends GenericApiResponse<string> {

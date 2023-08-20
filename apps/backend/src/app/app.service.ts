@@ -1,8 +1,19 @@
-import { Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
+
+import { responseData } from './util';
 
 @Injectable()
 export class AppService {
-  getData(): { message: string } {
-    return { message: 'Hello API' };
+
+  constructor() {
+    //noop
+  }
+
+  getWelcome(): { message: string; } {
+    const apiConfig = {
+      message: 'Welcome to backend!',
+      version: '1.0.0'
+    };
+    return responseData<any>(apiConfig, 'Success', HttpStatus.OK);
   }
 }

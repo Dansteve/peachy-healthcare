@@ -981,9 +981,9 @@ export class AppCoreService {
   async errorToast(
     _message: string,
     position: 'top' | 'bottom' | 'middle' = 'top',
-    color = 'danger', duration = 3500): Promise<HTMLIonToastElement> {
+    color = 'danger', duration = 3700): Promise<HTMLIonToastElement> {
     const toast = await this.toastController.create({
-      message: `<div>${_message}</div>`,
+      message: `${_message}`,
       position,
       color,
       duration,

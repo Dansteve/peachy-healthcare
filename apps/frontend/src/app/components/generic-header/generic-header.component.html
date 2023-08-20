@@ -5,12 +5,12 @@
       <ion-button>
         <ion-icon slot="icon-only" src="assets/icon/notification.svg"></ion-icon>
       </ion-button>
-      <ion-button color="dark" id="click-trigger">
+      <ion-button color="dark" id="click-trigger-{{uuid}}">
         <ion-img slot="start" src="assets/img/avatar.png"></ion-img>
         <div class="profile-info ion-margin-left-8">
-          <div class="title">DAN-01234567</div>
+          <div class="title">{{currentUser.userRef}}</div>
           <div class="name">
-            <div>Dansteve</div>
+            <div>{{currentUser.firstName}}</div>
             <div><ion-img slot="icon-only" src="assets/icon/down.svg"></ion-img></div>
           </div>
         </div>
@@ -18,7 +18,7 @@
     </ion-buttons>
   </ion-toolbar>
 
-  <ion-popover trigger="click-trigger" trigger-action="click" [dismissOnSelect]="true">
+  <ion-popover trigger="click-trigger-{{uuid}}" trigger-action="click" [dismissOnSelect]="true">
     <ng-template>
       <ion-content>
         <ion-list >
