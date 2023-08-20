@@ -1,3 +1,5 @@
+import { User } from './user.entity';
+
 export interface AnyInfo {
   [key: string | symbol]: any;
 }
@@ -54,6 +56,7 @@ export interface AddressPayload {
   district?: string;
   country?: string;
   residential?: boolean;
+  [key: string | symbol]: any;
 }
 
 
@@ -76,18 +79,18 @@ export interface ApiErrorResponse extends GenericApiResponse<string> {
   readonly isError?: true;
 }
 
-export interface User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  age: number;
-  phone: string;
-  password: string;
-  address: string;
-  gender: string;
-  [key: string | symbol]: any;
-}
+// export interface User {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+//   age: number;
+//   phone: string;
+//   password: string;
+//   address: AddressPayload;
+//   gender: string;
+//   [key: string | symbol]: any;
+// }
 
 export type UserLoginDTO = Pick<User, 'username' | 'password'>;
 
