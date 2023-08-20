@@ -6,6 +6,6 @@
     "path": "./tsconfig.spec.json"
   }],
   "compilerOptions": {
-    "esModuleJosefinSansop": true
+    "esModuleInterop": true
   }
 }
