@@ -1,4 +1,4 @@
-const urlNew = `postgresql://latadeigbodipe:kJSrhRdYLm21@ep-morning-glade-048740.us-east-2.aws.neon.tech/neondb`;
+const urlNew = `postgres://adekanbidansteve:w3MtIkc8VEzD@ep-autumn-tree-27299779.us-east-2.aws.neon.tech/neondb`;
 
 export const environment = {
   production: true,
