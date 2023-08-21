@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController, Platform, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
-import { AnyInfo, ApiErrorResponse, GenericApiResponse } from '@peachy-healthcare/app-interface';
+import { AnyInfo, ApiErrorResponse, AuthenticatedToken, GenericApiResponse, LoginPayload, SignUpPayload, User } from '@peachy-healthcare/app-interface';
 import { AppCoreService } from '../app-core-service/app-core.service';
 import { CryptoService } from '../crypto/crypto.service';
 import { HelperMethodsService } from '../helper-methods/helper-methods.service';
@@ -44,6 +44,38 @@ export class ApiService extends AppCoreService {
 
   async testApi(): Promise<GenericApiResponse<AnyInfo> | ApiErrorResponse> {
     return this.getRequestFromServe(this.apiBaseUrl);
+  }
+
+  async login(param: LoginPayload): Promise<GenericApiResponse<AuthenticatedToken> | ApiErrorResponse> {
+    return this.postRequestWithOutAuthHeader(this.apiBaseUrl + '/login', param);
+  }
+
+  async register(param: SignUpPayload): Promise<GenericApiResponse<AuthenticatedToken> | ApiErrorResponse> {
+    return this.postRequestWithOutAuthHeader(this.apiBaseUrl + '/register', param);
+  }
+
+  async forgetPassword(param: SignUpPayload): Promise<GenericApiResponse<AuthenticatedToken> | ApiErrorResponse> {
+    return this.postRequestWithOutAuthHeader(this.apiBaseUrl + '/forget-password', param);
+  }
+
+  async resetPassword(param: SignUpPayload): Promise<GenericApiResponse<AuthenticatedToken> | ApiErrorResponse> {
+    return this.postRequestWithOutAuthHeader(this.apiBaseUrl + '/reset-password', param);
+  }
+
+  async getProfile(): Promise<GenericApiResponse<User> | ApiErrorResponse> {
+    return this.getRequestFromServe(this.apiBaseUrl + '/profile');
+  }
+
+  async getProfileById(username: string): Promise<GenericApiResponse<User> | ApiErrorResponse> {
+    return this.getRequestFromServe(this.apiBaseUrl + `/users/${username}`);
+  }
+
+  async getProfileByUsername(username: string): Promise<GenericApiResponse<User> | ApiErrorResponse> {
+    return this.getRequestFromServe(this.apiBaseUrl + `/users/username/${username}`);
+  }
+
+  async updateProfile(id: string, param: Partial<User>): Promise<GenericApiResponse<AuthenticatedToken> | ApiErrorResponse> {
+    return this.putRequestWithHeader(this.apiBaseUrl + `/users/${id || param.username}`, param);
   }
 
   async getAddressSuggestions(address: string): Promise<GenericApiResponse<AnyInfo> | ApiErrorResponse> {

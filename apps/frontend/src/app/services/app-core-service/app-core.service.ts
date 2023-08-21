@@ -941,15 +941,15 @@ export class AppCoreService {
       // icon: 'information-circle',
       cssClass: 'customToast customToast-success',
       buttons: [
-        {
-          side: 'start',
-          icon: 'assets/toast/success.svg',
-          cssClass: 'customToast-icon',
-          text: '',
-          handler: () => {
-            console.log('Cart Button Clicked');
-          }
-        },
+        // {
+        //   side: 'start',
+        //   icon: 'assets/toast/success.svg',
+        //   cssClass: 'customToast-icon',
+        //   text: '',
+        //   handler: () => {
+        //     console.log('Cart Button Clicked');
+        //   }
+        // },
         // {
         //   side: 'end',
         //   icon: 'assets/toast/close.svg',
@@ -981,9 +981,9 @@ export class AppCoreService {
   async errorToast(
     _message: string,
     position: 'top' | 'bottom' | 'middle' = 'top',
-    color = 'danger', duration = 3500): Promise<HTMLIonToastElement> {
+    color = 'danger', duration = 3700): Promise<HTMLIonToastElement> {
     const toast = await this.toastController.create({
-      message: `<div>${_message}</div>`,
+      message: `${_message}`,
       position,
       color,
       duration,

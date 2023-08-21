@@ -1,0 +1,34 @@
+ion-toolbar {
+  --min-height: 5rem;
+  --background: var(--ion-color-pure-white);
+  --border-color: var(--ion-color-stroke);
+}
+
+ion-content {
+  --background: #FAFAFA;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+
+  .title {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .name {
+    color: #555557;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
