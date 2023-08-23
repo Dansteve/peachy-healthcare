@@ -18,7 +18,7 @@ export class GenericHeaderComponent implements OnInit {
   readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
   isLoading = false;
-  currentUser: User = {} as User;
+  currentUser: User = this.apiService.staticUser.data.user as any as User;
   copied = false;
   uuid = NEW_UUID();
 
@@ -60,7 +60,8 @@ export class GenericHeaderComponent implements OnInit {
     this.helperMethods.promiseTimeout(this.apiService.getProfile())
       .then(async (res: GenericApiResponse<User>) => {
         this.currentUser = res.data;
-        this.apiService.setAuthenticatedUser(this.currentUser);
+        console.log(res);
+        // this.apiService.setAuthenticatedUser(this.currentUser);
       }).catch((err: ApiErrorResponse) => {
         console.log(err);
       });

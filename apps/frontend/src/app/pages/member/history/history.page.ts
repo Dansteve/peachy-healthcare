@@ -7,36 +7,17 @@ import { ApiService } from '../../../services/api/api.service';
 import { HelperMethodsService } from '../../../services/helper-methods/helper-methods.service';
 import { ScreenSizeService } from '../../../services/screen-size/screen-size.service';
 
-@Component({
-  selector: 'peachy-healthcare-dashboard',
-  templateUrl: './dashboard.page.html',
-  styleUrls: ['./dashboard.page.scss'],
-})
-export class DashboardPage implements OnInit {
 
-  readonly isPwa: Readonly<boolean> = environment.isPwa;
+@Component({
+  selector: 'peachy-healthcare-history',
+  templateUrl: './history.page.html',
+  styleUrls: ['./history.page.scss'],
+})
+export class HistoryPage implements OnInit {
+
+    readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
   isLoading = false;
-
-
-
-  isWeekday = (dateString: string) => {
-    const date = new Date(dateString);
-    const utcDay = date.getUTCDay();
-
-    /**
-     * Date will be enabled if it is not
-     * Sunday or Saturday
-     */
-    return utcDay !== 0 && utcDay !== 6;
-  };
-
-  today = new Date().toISOString();
-
-  recommendationParam = {
-    tab: 'recommendation'
-  }
-
 
   constructor(
     public screenSizeService: ScreenSizeService,
@@ -56,6 +37,7 @@ export class DashboardPage implements OnInit {
   }
 
 
+
   goTo(page = '') {
     const link = `/public/${page}`;
     // this.router.navigate([link],);
@@ -69,11 +51,7 @@ export class DashboardPage implements OnInit {
     this.navController.navigateForward(link, { animated: false });
   }
 
-  /**
-   * Get class name
-   */
-  getClassName() {
-    return 'DashboardPage';
+  viewReport(id: any) {
+    this.goToMember(`history/${id}`, { id });
   }
-
 }

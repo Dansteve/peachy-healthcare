@@ -45,6 +45,15 @@ ion-content {
   .content-container {
     padding: 1rem;
   }
+
+  .profile-card {
+    flex-direction: column;
+  }
+
+  .profile-card-left {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 

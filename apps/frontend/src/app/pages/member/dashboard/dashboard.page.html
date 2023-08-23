@@ -23,7 +23,7 @@
         </ion-row>
         <ion-row class="ion-margin-bottom-10">
           <ion-col sizeLg="6">
-            <div class="action-card">
+            <div class="action-card" (click)="goToMember('my-test')">
               <div class="feature-img">
                 <ion-img src="assets/img/hearth.png"></ion-img>
               </div>
@@ -49,7 +49,7 @@
         </ion-row>
         <ion-row class="ion-margin-bottom-10">
           <ion-col sizeLg="6">
-            <div class="action-card">
+            <div class="action-card" (click)="goToMember('history')">
               <div class="feature-img">
                 <ion-img src="assets/img/health_history.png"></ion-img>
               </div>
@@ -61,7 +61,7 @@
             </div>
           </ion-col>
           <ion-col sizeLg="6">
-            <div class="action-card">
+            <div class="action-card" (click)="goToMember('history' , recommendationParam)">
               <div class="feature-img">
                 <ion-img src="assets/img/recommendation.png"></ion-img>
               </div>

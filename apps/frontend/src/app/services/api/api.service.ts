@@ -20,6 +20,51 @@ import { environment } from './../../../environments/environment';
 
 export class ApiService extends AppCoreService {
 
+  staticUser = {
+    "data": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnN0ZXZlLmFkZWthbmJpQG1haWwuYmN1LmFjLnVrIiwiaWQiOiIwNTRmNGFhNS1kZjkzLTRmY2QtYTRkNy1jY2ZjYWFhYjYwYzkiLCJjcmVhdGVkQXQiOiIyMDIzLTA4LTIwVDEyOjA4OjI2LjM2OFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTA4LTIwVDEyOjA4OjI2LjM2OFoiLCJ1c2VyUmVmIjoiTlVORTkxTlZBWFEiLCJmaXJzdE5hbWUiOiJEYW5zdGV2ZSIsImxhc3ROYW1lIjoiQWRla2FuYmkiLCJ1c2VybmFtZSI6ImRhbnN0ZXZlLmFkZWthbmJpQG1haWwuYmN1LmFjLnVrIiwiZ2VuZGVyIjoiTWFsZSIsInBob25lTnVtYmVyIjoiMDEyMzQ1Njc4OSIsImFnZSI6IjM2Iiwib3RwIjpudWxsLCJhZGRyZXNzIjp7ImlkIjoiMGYyOTUxYjEtZDQzOC00ZTQ4LTgyOTEtMTJkZTU5ZDVmN2Y0IiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0yMFQxMjowODoyNi4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0yMFQxMjowODoyNi4wMDBaIiwidXNlcklkIjoiMDU0ZjRhYTUtZGY5My00ZmNkLWE0ZDctY2NmY2FhYWI2MGM5Iiwic2VhcmNoIjpudWxsLCJwb3N0Y29kZSI6IkI4IDNRVSIsImxhdGl0dWRlIjo1MiwibG9uZ2l0dWRlIjotMSwidGhvcm91Z2hmYXJlIjoiSGlnaGZpZWxkIFJvYWQiLCJidWlsZGluZ19uYW1lIjoiIiwic3ViX2J1aWxkaW5nX25hbWUiOiIiLCJzdWJfYnVpbGRpbmdfbnVtYmVyIjoiIiwiYnVpbGRpbmdfbnVtYmVyIjoiNDAiLCJsaW5lXzEiOiI0MCBIaWdoZmllbGQgUm9hZCIsImxpbmVfMiI6IiIsImxpbmVfMyI6IiIsImxpbmVfNCI6IiIsImxvY2FsaXR5IjoiU2FsdGxleSIsInRvd25fb3JfY2l0eSI6IkJpcm1pbmdoYW0iLCJjb3VudHkiOiJXZXN0IE1pZGxhbmRzIiwiZGlzdHJpY3QiOiJCaXJtaW5naGFtIiwiY291bnRyeSI6IkVuZ2xhbmQiLCJyZXNpZGVudGlhbCI6dHJ1ZX0sImlhdCI6MTY5Mjc5NDkxMSwiZXhwIjoxNjkyNzk4NTExfQ.vpup6R_sAM9K5mF6LDzqqtqD_vBZLaiEZVSc8isWXKU",
+      "user": {
+        "id": "054f4aa5-df93-4fcd-a4d7-ccfcaaab60c9",
+        "createdAt": "2023-08-20T12:08:26.368Z",
+        "updatedAt": "2023-08-20T12:08:26.368Z",
+        "userRef": "NUNE91NVAXQ",
+        "firstName": "Dansteve",
+        "username": "example@email.com",
+        "lastName": "Adekanbi",
+        "gender": "Male",
+        "phoneNumber": "0123456789",
+        "age": "36",
+        "otp": null,
+        "address": {
+          "id": "0f2951b1-d438-4e48-8291-12de59d5f7f4",
+          "createdAt": "2023-08-20T12:08:26.000Z",
+          "updatedAt": "2023-08-20T12:08:26.000Z",
+          "userId": "054f4aa5-df93-4fcd-a4d7-ccfcaaab60c9",
+          "search": null,
+          "postcode": "B8 3QU",
+          "latitude": 52,
+          "longitude": -1,
+          "thoroughfare": "Highfield Road",
+          "building_name": "",
+          "sub_building_name": "",
+          "sub_building_number": "",
+          "building_number": "40",
+          "line_1": "40 Highfield Road",
+          "line_2": "",
+          "line_3": "",
+          "line_4": "",
+          "locality": "Saltley",
+          "town_or_city": "Birmingham",
+          "county": "West Midlands",
+          "district": "Birmingham",
+          "country": "England",
+          "residential": true
+        },
+      }
+    },
+    "message": "Login successful",
+    "status": 200
+  };
   constructor(
     platform: Platform,
     http: HttpClient,
@@ -47,6 +92,20 @@ export class ApiService extends AppCoreService {
   }
 
   async login(param: LoginPayload): Promise<GenericApiResponse<AuthenticatedToken> | ApiErrorResponse> {
+
+    if (!environment.production) {
+      return await new Promise((resolve, reject) => {
+        const data: any = {
+          ...{
+            user: {
+              ...param,
+            }
+          },
+          ...this.staticUser,
+        };
+        resolve(data);
+      });
+    }
     return this.postRequestWithOutAuthHeader(this.apiBaseUrl + '/login', param);
   }
 
@@ -63,14 +122,32 @@ export class ApiService extends AppCoreService {
   }
 
   async getProfile(): Promise<GenericApiResponse<User> | ApiErrorResponse> {
+    if (!environment.production) {
+      return await new Promise((resolve, reject) => {
+        const data: any = { data: { ...this.staticUser.data.user } };
+        resolve(data);
+      });
+    }
     return this.getRequestFromServe(this.apiBaseUrl + '/profile');
   }
 
   async getProfileById(username: string): Promise<GenericApiResponse<User> | ApiErrorResponse> {
+    if (!environment.production) {
+      return await new Promise((resolve, reject) => {
+        const data: any = { ...this.staticUser.data };
+        resolve(data);
+      });
+    }
     return this.getRequestFromServe(this.apiBaseUrl + `/users/${username}`);
   }
 
   async getProfileByUsername(username: string): Promise<GenericApiResponse<User> | ApiErrorResponse> {
+    if (!environment.production) {
+      return await new Promise((resolve, reject) => {
+        const data: any = { ...this.staticUser.data};
+        resolve(data);
+      });
+    }
     return this.getRequestFromServe(this.apiBaseUrl + `/users/username/${username}`);
   }
 

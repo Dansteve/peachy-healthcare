@@ -1,0 +1,41 @@
+<peachy-healthcare-generic-header></peachy-healthcare-generic-header>
+
+<ion-content>
+  <div class="content-container">
+    <div class="report-card">
+      <div class="header-bar">
+        <div>
+          <ion-img src="assets/img/report.png"></ion-img>
+        </div>
+        <div class="header-bar-title">History</div>
+      </div>
+
+      <div class="table-title">
+        Test History List
+      </div>
+
+      <ion-grid>
+        <ion-row class="table-header">
+          <ion-col sizeXl="2" sizeLg="2" sizeMd="2" class="table-col">Reference</ion-col>
+          <ion-col sizeXl="4" sizeLg="4" sizeMd="4" class="table-col ion-hide-md-down"></ion-col>
+          <ion-col sizeXl="2" sizeLg="2" sizeMd="2" class="table-col">Status</ion-col>
+          <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Date</ion-col>
+          <ion-col sizeXl="1" sizeLg="1" sizeMd="1" sizeSm="2" class="table-col"></ion-col>
+        </ion-row>
+        <ion-row class="table-row" *ngFor="let item of [1,2,3,4,5,6,7,8,9]; let i=index">
+          <ion-col sizeXl="2" sizeLg="2" sizeMd="2" sizeSm="2" class="table-col">STL-{{item}}fc{{item * 200}}b0</ion-col>
+          <ion-col sizeXl="4" sizeLg="4" sizeMd="4" class="table-col ion-hide-md-down">Treatment of benign prostatic hyperplasia (BPH)</ion-col>
+          <ion-col sizeXl="2" sizeLg="2" sizeMd="2" class="table-col">
+            <div class="indicator" [ngClass]="{'pending': item % 3 === 0}"></div>
+            <div>{{item % 3 === 0 ? 'Pending' : 'Ready'}}</div>
+          </ion-col>
+          <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">{{item}}-10-2023; 10:45 AM</ion-col>
+          <ion-col sizeXl="1" sizeLg="1" sizeMd="1" class="table-col">
+            <div class="clickable button" (click)="viewReport(item)">View</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div>
+</ion-content>

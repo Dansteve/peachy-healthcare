@@ -1,0 +1,118 @@
+ion-toolbar {
+  --min-height: 5rem;
+  --background: var(--ion-color-pure-white);
+  --border-color: var(--ion-color-stroke);
+}
+
+ion-content {
+  --background: #FAFAFA;
+}
+
+.header-bar {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  .header-bar-title {
+    color: #414141;
+    text-align: center;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+.content-container {
+  padding: 1.5rem;
+}
+
+.report-card {
+  border-radius: 0.5rem;
+  background: #FFF;
+  padding: 1.5rem;
+}
+
+
+.table-title {
+  color: #1F2D3D;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+}
+
+.table-header {
+  background: #FFF2F2;
+  box-shadow: 0px -1px 0px 0px #EDF2F7 inset;
+  padding: 1.125rem 1.5rem 1.125rem 1.5rem;
+
+
+  .table-col {
+    color: #231F20;
+    font-family: "DMSans-Regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+.table-row {
+  box-shadow: 0px -1px 0px 0px #EDF2F7 inset;
+  padding: 1.125rem 1.5rem 1.125rem 1.5rem;
+
+  .table-col {
+    color: #425466;
+    font-family: "DMSans-Regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .button {
+      display: flex;
+      padding: 0.5rem 1rem;
+      align-items: center;
+      border-radius: 0.25rem;
+      border: 1px solid var(--border-light, #EDF2F7);
+      align-self: stretch;
+      justify-content: center;
+    }
+
+
+    .indicator {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.5rem;
+      background: #16D81E;
+
+      &.pending {
+        background: #D8C516 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 508px) {
+  .date-card {
+    margin-left: 0rem;
+  }
+
+  .content-container {
+    padding: 1rem;
+  }
+
+  .report-card {
+    padding: 0.5rem;
+  }
+}

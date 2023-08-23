@@ -12,6 +12,13 @@
       <ion-label>My Tests</ion-label>
     </ion-tab-button>
 
+
+    <ion-tab-button tab="history" color="dark" (click)="goBackToTab('history')">
+      <img class="icon-size" src="assets/tab/history.svg" *ngIf="currentUrl !== 'history'">
+      <img class="icon-size" src="assets/tab/history-active-mobile.svg" *ngIf="currentUrl === 'history'">
+      <ion-label>History</ion-label>
+    </ion-tab-button>
+
     <ion-tab-button tab="profile" color="dark" (click)="goBackToTab('profile')">
       <img class="icon-size" src="assets/tab/profile.svg" *ngIf="currentUrl !== 'profile'">
       <img class="icon-size" src="assets/tab/profile-active-mobile.svg" *ngIf="currentUrl === 'profile'">
@@ -49,6 +56,12 @@
             <img alt="Peachy" src="assets/tab/my-test-active.svg" slot="start" *ngIf="currentUrl === 'my-test'">
             <ion-label *ngIf="!iconOnly">
               <div class="title">My Tests</div>
+            </ion-label>
+          </ion-item><ion-item (click)="goToTab('history')" class="my-menu-item" [ngClass]="{'active-side-menu': currentUrl === 'history'}" label="history" data="history">
+            <img alt="Peachy" src="assets/tab/history.svg" slot="start" *ngIf="currentUrl !== 'history'">
+            <img alt="Peachy" src="assets/tab/history-active.svg" slot="start" *ngIf="currentUrl === 'history'">
+            <ion-label *ngIf="!iconOnly">
+              <div class="title">History</div>
             </ion-label>
           </ion-item>
           <ion-item (click)="goToTab('profile')" class="my-menu-item" [ngClass]="{'active-side-menu': currentUrl === 'profile'}" label="profile" data="profile">

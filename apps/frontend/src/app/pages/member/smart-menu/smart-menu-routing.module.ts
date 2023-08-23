@@ -35,6 +35,29 @@ const routes: Routes = [
           import('../profile/profile.module').then((m) => m.ProfilePageModule),
       },
       {
+        path: 'history',
+        title: 'History',
+        // canActivate: [AuthGuard],
+        children: [
+          {
+            path: '',
+            resolve: {
+              special: DataResolverService,
+            },
+            loadChildren: () =>
+              import('../history/history.module').then((m) => m.HistoryPageModule),
+          },
+          {
+            path: ':id',
+            resolve: {
+              special: DataResolverService,
+            },
+            loadChildren: () =>
+              import('../history-view/history-view.module').then((m) => m.HistoryViewPageModule),
+          }
+        ]
+      },
+      {
         path: 'my-test',
         title: 'My Test',
         // canActivate: [AuthGuard],

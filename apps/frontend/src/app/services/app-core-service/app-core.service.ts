@@ -780,7 +780,7 @@ export class AppCoreService {
       // subHeader: 'Subtitle',
       cssClass: 'my-alert',
       mode: 'ios',
-      message: html,
+      message: `${_message}`,
       buttons: [{
         text: 'Okay',
         role: 'cancel',
