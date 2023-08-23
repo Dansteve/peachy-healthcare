@@ -15,7 +15,7 @@ import { ScreenSizeService } from '../../../services/screen-size/screen-size.ser
 })
 export class HistoryPage implements OnInit {
 
-    readonly isPwa: Readonly<boolean> = environment.isPwa;
+  readonly isPwa: Readonly<boolean> = environment.isPwa;
   protected isDesktop!: boolean;
   isLoading = false;
 

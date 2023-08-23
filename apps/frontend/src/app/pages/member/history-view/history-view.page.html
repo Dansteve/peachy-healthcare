@@ -1,5 +1,182 @@
 <peachy-healthcare-generic-header></peachy-healthcare-generic-header>
 
 <ion-content>
+  <div class="content-container">
+    <div class="report-card">
+      <div class="header-bar">
+        <div>
+          <ion-img src="assets/img/report.png"></ion-img>
+        </div>
+        <div class="header-bar-title">History</div>
+      </div>
 
+      <div class="table-title">
+        STL-1fc189b0
+      </div>
+
+      <div class="tab-segment">
+        <ion-segment value="Pharmacogenetic Analysis" [(ngModel)]="tab">
+          <ion-segment-button value="Pharmacogenetic-Analysis">
+            <ion-label>Pharmacogenetic Analysis</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Lifestyle-Analysis">
+            <ion-label>Lifestyle Analysis</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Results">
+            <ion-label>Results</ion-label>
+          </ion-segment-button><ion-segment-button value="Recommendation">
+            <ion-label>Recommendation</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <div class="ion-margin-top-40">
+
+        <div class="tab-content" *ngIf="tab === 'Pharmacogenetic-Analysis'">
+          <div>
+            Based on your uploaded pharmacogenetic report, we have identified genetic variations that could impact your response to medications. This genetic insight is particularly relevant for your treatment of Benign Prostatic Hyperplasia (BPH), ensuring a tailored approach to your medication plan.
+          </div>
+          <div>
+            <b>Key Pharmacogenetic Insights:</b>
+            <div>
+              Your genetic analysis reveals variations in drug metabolism enzymes and receptors related to 5-Alpha Reductase Inhibitors, a common treatment for BPH. These insights help guide the selection of appropriate medications and dosages for optimal results.
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" *ngIf="tab === 'Lifestyle-Analysis'">
+          <div>We've considered your responses to our lifestyle questionnaire to provide a comprehensive treatment recommendation that aligns with your genetic makeup and lifestyle choices, enhancing treatment effectiveness.</div>
+          <div>
+            <b>Lifestyle Assessment:</b>
+            <ul>
+              <li>Diet and Nutrition: You indicated a preference for a balanced diet rich in vegetables and lean proteins, providing a foundation for your medication regimen.</li>
+              <li>Physical Activity: Your reported moderate level of physical activity supports overall well-being and complements the proposed treatment plan.</li>
+              <li> Stress and Sleep: Your reported low stress levels and consistent sleep patterns contribute positively to your treatment outcomes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content" *ngIf="tab === 'Results'">
+          <ion-grid>
+            <ion-row class="table-header">
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col clickable" (click)="openInfo()" id="click-trigger">Drug Class</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Standard Precaution</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col">Use with Caution</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Consider Alternative</ion-col>
+            </ion-row>
+            <ion-row class="table-row">
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col clickable" (click)="openInfo()" id="click-trigger">Angiotensin II Receptor Antagonists</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Azilsartan (Edarbi, Edarbyclor) Candesartan (Atacand) Eprosartan (Teveten) Irbesartan (Avapro) Losartan (Cozaar, Hyzaar) Olmesartan (Benicar) Telmisartan (Micardis) Valsartan (Diovan, Entresto)</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col"></ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down"></ion-col>
+            </ion-row>
+
+            <ion-row class="table-row">
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col clickable" (click)="openInfo()" id="click-trigger">Antianginal Agents </ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down"></ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col">Ranolazine (Ranexa)</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down"></ion-col>
+            </ion-row>
+
+            <ion-row class="table-row">
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col clickable" (click)="openInfo()" id="click-trigger">Antiarrhythmics</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down"></ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col">Flecainide (Tambocor) Mexiletine (Mexitil) Propafenone (Rythmol)</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Treatment of high blood pressure</ion-col>
+            </ion-row>
+
+            <ion-row class="table-row">
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col clickable" (click)="openInfo()" id="click-trigger">Anticoagulants</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Apixaban (Eliquis) Dabigatran Etexilate (Pradaxa) Edoxaban (Savaysa) Fondaparinux (Arixtra) Rivaroxaban (Xarelto)</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col">Warfarin (Coumadin)</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Treatment of HIV infections</ion-col>
+            </ion-row>
+
+            <ion-row class="table-row">
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col clickable" (click)="openInfo()">Antiplatelets</ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">
+                Prasugrel (Effient)<br>
+              Ticagrelor (Brilinta)<br>
+              Vorapaxar (Zontivity)
+              </ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col"></ion-col>
+              <ion-col sizeXl="3" sizeLg="3" sizeMd="3" class="table-col ion-hide-md-down">Clopidogrel (Plavix)</ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-popover class="drug-popover" [isOpen]="isInfoOpen" [dismissOnSelect]="true" (didDismiss)="openInfo()">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Angiotensin II Receptor Antagonists</ion-title>
+                </ion-toolbar>
+
+                <div class="ion-padding">
+                  <b>Meaning/Use : </b>
+                  <div class="ion-padding-bottom">Treatment of benign prostatic hyperplasia
+                    (BPH)</div>
+
+                  <b>More Information:</b>
+                  <div><a>Link to info.</a></div>
+                </div>
+
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+
+        </div>
+
+        <div class="tab-content" *ngIf="tab === 'Recommendation'">
+          <div>Based on the comprehensive analysis of your pharmacogenetic report, lifestyle questionnaire, and the specific genetic insights related to 5-Alpha Reductase Inhibitors for the treatment of Benign Prostatic Hyperplasia (BPH), we are pleased to provide you with personalized medication recommendations and lifestyle guidance to support your health journey.</div>
+
+          <div>
+            <b>Medication Recommendations:</b>
+            <ol>
+              <li>
+                <b>Finasteride (5-Alpha Reductase Inhibitor):</b>
+                <div>-> Dosage: 5mg once daily, preferably taken with a meal.</div>
+                <div>-> Purpose: Finasteride is selected for its potential to effectively manage the symptoms of BPH by reducing the size of the prostate gland. Genetic insights suggest a favorable response to this medication in your case.</div>
+                <div>-> Administration: Take one tablet daily at the same time to ensure consistent dosing.</div>
+                <div>-> Lifestyle Compatibility: Your balanced diet and moderate physical activity are in alignment with the proposed treatment plan.</div>
+              </li>
+              <li>
+                <b>Saw Palmetto Extract (Supportive Supplement):</b>
+                <div>-> Dosage: Follow the dosage instructions provided on the supplement label.</div>
+                <div>-> Purpose: Saw Palmetto is a natural supplement that complements the primary treatment, offering potential additional support for BPH symptoms.</div>
+                <div>-> Administration: Take as directed by the supplement label, usually with a meal.</div>
+                <div>-> Lifestyle Compatibility: Considering your preference for natural remedies, Saw Palmetto is recommended as an adjunct to the main treatment.</div>
+              </li>
+              <li>
+                <b>Stress and Sleep:</b>
+                <div>Your reported low stress levels and consistent sleep patterns are beneficial. Consistent sleep is important for your overall health and can positively impact your treatment outcomes.</div>
+              </li>
+            </ol>
+          </div>
+          <div>
+            <b>Lifestyle Guidance:</b>
+            <ol>
+              <li>
+                <b>Diet and Nutrition:</b>
+                <div>Continue to maintain a balanced diet rich in vegetables, lean proteins, and whole grains. Adequate nutrition supports your overall health and complements the medication regimen.</div>
+              </li>
+              <li>
+                <b>Physical Activity:</b>
+                <div>Keep up with your moderate level of physical activity, as it contributes positively to your well-being and may enhance the effectiveness of the treatment.</div>
+              </li>
+              <li>
+                <b>Stress and Sleep:</b>
+                <div>Your reported low stress levels and consistent sleep patterns are beneficial. Consistent sleep is important for your overall health and can positively impact your treatment outcomes.</div>
+              </li>
+            </ol>
+          </div>
+          <b>Consultation with Healthcare Provider:</b>
+          <div>Before starting any new medication, we strongly advise you to schedule a consultation with your healthcare provider. Share the personalized recommendations from this report, along with your medical history, to ensure that the proposed treatment plan aligns with your individual health needs.</div>
+          <b>Monitoring and Feedback:</b>
+          <div>Regularly communicate with your healthcare provider regarding your progress and any potential side effects. Your provider can make necessary adjustments to the treatment plan based on your response. We are committed to supporting you on your journey to well-being. If you have any questions or need further assistance, please feel free to reach out to our dedicated support team. Your health and comfort are our priorities</div>
+          <div>Wishing you the best of health and a positive experience with your personalized treatment plan.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </ion-content>
