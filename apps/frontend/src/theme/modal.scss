@@ -1,0 +1,6 @@
+.big-modal{
+  @media (min-width: 576px) {
+    --min-width: 60rem;
+    --min-height: 40rem;
+  }
+}

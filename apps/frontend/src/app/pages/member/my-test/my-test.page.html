@@ -1,4 +1,320 @@
 <peachy-healthcare-generic-header></peachy-healthcare-generic-header>
-
 <ion-content>
+  <div class="content-container">
+    <div class="report-card">
+      <div class="flex w-full" *ngIf="step === 4">
+        <ion-button fill="clear" size="small" (click)="goBack()">
+          <ion-icon slot="icon-only" name="arrow-back-outline" color="dark"></ion-icon>
+        </ion-button>
+      </div>
+      <div class="header-bar-full">
+        <div class="header-bar">
+          <div>
+            <ion-img src="assets/img/report.png"></ion-img>
+          </div>
+          <div class="header-bar-title">{{step <= 3 ? 'Lifestyle Questionnaire' : 'Choose you preferred pricing'}}</div>
+        </div>
+
+        <div *ngIf="step <= 3">
+          Step {{step}}/3
+        </div>
+      </div>
+
+      <div class="ion-padding-top-8 ion-padding-bottom-48" *ngIf="step <= 3">
+        <ion-progress-bar [value]="step / 3" color="brand"></ion-progress-bar>
+      </div>
+
+      <div class="form-container">
+        <ng-container *ngIf="step === 1">
+
+          <div class="form-field w-full">
+            <div class="w-47">Do you smoke?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Are you a current smoker?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">If Yes how many do you smoke a day?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">If you smoked in the past, when did you stop?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-title">Alcohol</div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Do you drink alcohol?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">How much alcohol do you drink per week?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+        </ng-container>
+
+        <ng-container *ngIf="step === 2">
+          <div class="form-title">Family History</div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Do you have a close relative (father, mother, brother, sister)
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Who has had angina or a heart attack before the age of 60?
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover" multiple="true">
+                <ion-select-option value="father">Father</ion-select-option>
+                <ion-select-option value="mother">Mother</ion-select-option>
+                <ion-select-option value="brother">Brother</ion-select-option>
+                <ion-select-option value="sister">Sister</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-title">Medical History</div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Have you ever had angina/heart attack or stroke?
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-title">Ethnicity</div>
+
+          <div class="form-field w-full">
+            <div class="w-47">How would you describe your Ethnic group?</div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="step === 3">
+
+          <div class="form-field w-full">
+            <div class="w-47">Please state Are you on any regular medication?
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">If yes, which ones?
+            </div>
+            <div class="w-full">
+              <ion-input class="custom custom-new  w-full" type="text" fill="outline" placeholder="Enter Name" errorText=""></ion-input>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Do you have any allergies?
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">If yes, which ones?
+            </div>
+            <div class="w-full">
+              <ion-input class="custom custom-new  w-full" type="text" fill="outline" placeholder="Enter Name" errorText=""></ion-input>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Do you take any herbal medication?
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">If yes, which ones?
+            </div>
+            <div class="w-full">
+              <ion-input class="custom custom-new  w-full" type="text" fill="outline" placeholder="Enter Name" errorText=""></ion-input>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">Do you take any over the counter medications?
+            </div>
+            <div class="w-full">
+              <ion-select class="custom w-full" placeholder="Select" interface="popover">
+                <ion-select-option value="yes">Yes</ion-select-option>
+                <ion-select-option value="no">No</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <div class="form-field w-full">
+            <div class="w-47">If yes, which ones?
+            </div>
+            <div class="w-full">
+              <ion-input class="custom custom-new w-full" type="text" fill="outline" placeholder="Enter Name" errorText=""></ion-input>
+            </div>
+          </div>
+
+        </ng-container>
+
+      </div>
+
+      <ng-container *ngIf="step === 4">
+        <div class="pricing-segment ion-margin-top-16 ion-margin-bottom-20">
+          <ion-segment value="year" [(ngModel)]="pricing">
+            <ion-segment-button value="year">
+              <ion-label>Annually</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="month">
+              <ion-label>Monthly</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+
+        <ion-row>
+          <ion-col sizeXl="4" sizeLg="6" size="12">
+            <div class="pricing-card">
+              <div class="pricing-card-top">
+                <div class="pricing-card-title">Basic Plan</div>
+                <div class="pricing-card-amount">£{{pricing === 'year' ? '24.99' : '2.49'}}</div>
+                <div class="pricing-card-type">/{{pricing}}</div>
+                <div class="w-full">
+                  <ion-button color="dark" expand="block" shape="round" (click)="showTestCongratulationsModal()">
+                    <ion-label> Select plan </ion-label>
+                  </ion-button>
+                </div>
+              </div>
+              <div class="pricing-card-bottom">
+                <div class="pricing-card-item" *ngFor="let item of basicPlan; let i=index">
+                  <ion-icon src="assets/icon/check.svg"></ion-icon>
+                  <span>{{item}}</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+
+          <ion-col sizeXl="4" sizeLg="6" size="12">
+            <div class="pricing-card brand">
+              <div class="pricing-card-top brand">
+                <div class="pricing-card-title">Enhanced Plan</div>
+                <div class="pricing-card-amount">£{{pricing === 'year' ? '52.99' : '5.29'}}</div>
+                <div class="pricing-card-type">/{{pricing}}</div>
+                <div class="w-full">
+                  <ion-button color="dark" expand="block" shape="round" (click)="showTestCongratulationsModal()">
+                    <ion-label> Select plan </ion-label>
+                  </ion-button>
+                </div>
+              </div>
+              <div class="pricing-card-bottom">
+                <div class="pricing-card-item" *ngFor="let item of enhancedPlan; let i=index">
+                  <ion-icon src="assets/icon/check.svg"></ion-icon>
+                  <span>{{item}}</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+
+          <ion-col sizeXl="4" sizeLg="6" size="12">
+            <div class="pricing-card">
+              <div class="pricing-card-top">
+                <div class="pricing-card-title">Premium Plan</div>
+                <div class="pricing-card-amount">£{{pricing === 'year' ? '100.99' : '10.49'}}</div>
+                <div class="pricing-card-type">/{{pricing}}</div>
+                <div class="w-full">
+                  <ion-button color="dark" expand="block" shape="round" (click)="showTestCongratulationsModal()">
+                    <ion-label> Select plan </ion-label>
+                  </ion-button>
+                </div>
+              </div>
+              <div class="pricing-card-bottom">
+                <div class="pricing-card-item" *ngFor="let item of premiumPlan; let i=index">
+                  <ion-icon src="assets/icon/check.svg"></ion-icon>
+                  <span>{{item}}</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+
+      <div class="header-bar-full ion-padding-top" *ngIf="step <= 3">
+        <ion-button color="light" (click)="goBack()">
+          <span>Go Back </span>
+        </ion-button>
+
+        <ion-button color="brand" (click)="goForward()">
+          <span>
+            Proceed
+          </span>
+        </ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>

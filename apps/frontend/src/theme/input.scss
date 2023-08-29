@@ -14,3 +14,32 @@ ion-input.custom {
     color: var(--ion-text-light-color);
   }
 }
+
+ion-input.custom-new {
+  border-radius: 0.125rem;
+  border: 1px solid #C3BDBD;
+  padding-left: 1.19rem !important;
+  padding-right: 1.19rem !important;
+}
+
+
+ion-select.custom {
+  --color: var(--ion-text-color);
+  --placeholder-color: var(--ion-text-light-color);
+  --placeholder-opacity: 0.8;
+
+  --height: 54px;
+  --max-height: 54px;
+  height: 54px;
+  max-height: 54px;
+  min-height: 54px;
+  border-radius: 0.125rem;
+  border: 1px solid #C3BDBD;
+  padding-left: 1.19rem;
+  padding-right: 1.19rem;
+
+  .label-text-wrapper {
+    margin-top: 5px;
+    color: var(--ion-text-light-color);
+  }
+}

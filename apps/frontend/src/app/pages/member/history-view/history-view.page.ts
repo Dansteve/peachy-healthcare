@@ -39,7 +39,23 @@ export class HistoryViewPage implements OnInit {
   }
 
 
+
+  goTo(page = '') {
+    const link = `/public/${page}`;
+    // this.router.navigate([link],);
+    this.navController.navigateForward(link, { animated: false });
+  }
+
+
+  goToMember(page = '') {
+    const link = `/member/${page}`;
+    // this.router.navigate([link],);
+    this.navController.navigateForward(link, { animated: false });
+  }
+
   openInfo() {
     this.isInfoOpen = !this.isInfoOpen;
   }
+
+  
 }

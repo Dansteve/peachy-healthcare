@@ -247,15 +247,28 @@ ion-header {
 }
 
 .how-card-container {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(1, 100%);
   padding: 1rem;
-  gap: 5rem;
+  gap: 4.5rem;
+
+  .how-divider {
+    position: absolute;
+    left: 49.5%;
+    top: 3rem;
+  }
 
   .how-card {
     display: flex;
-    align-items: center;
+    // align-items: center;
     gap: 2rem;
+
+    &.how-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .how-card-count {
       width: 4rem;
@@ -273,6 +286,12 @@ ion-header {
         background: #FF521C;
         color: #fff;
       }
+    }
+
+    .how-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .how-card-title {
@@ -304,7 +323,7 @@ ion-header {
   gap: 2.12rem;
   flex-direction: column;
 
-  
+
 
   .pricing-content {
     display: flex;
@@ -384,8 +403,8 @@ ion-header {
 .pricing-card {
   min-height: 45.125rem;
 
-  &.brand{
-  box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.05);
+  &.brand {
+    box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.05);
   }
 
   .pricing-card-top {
