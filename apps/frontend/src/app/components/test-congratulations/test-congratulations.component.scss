@@ -1,0 +1,128 @@
+.container {
+  --background: linear-gradient(90deg, #fff 40%, rgba(0, 0, 0, 0.05) 40% 100%),
+    linear-gradient(225deg, #FFA44C 0%, #FD3C83 100%);
+
+
+}
+
+.page-flex {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.modal-title {
+  color: var(--white, #FFF);
+  font-feature-settings: 'clig'off,
+    'liga'off;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "DMSans-Regular" !important;
+}
+
+.modal-subtitle {
+  color: #FAFAFA;
+  font-feature-settings: 'clig'off,
+    'liga'off;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 21rem;
+  font-family: "DMSans-Regular" !important;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  position: relative;
+  font-family: "DMSans-Regular" !important;
+}
+
+.stepper-title {
+  color: #FFF;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "DMSans-Regular" !important;
+}
+
+ion-button {
+  span {
+    background: var(--ion-color-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "DMSans-Regular" !important;
+  }
+}
+
+
+.stepper-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  .stepper-count {
+    width: 3.8rem;
+    height: 3.8rem;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    border: 3px solid #F7D0D0;
+    justify-content: center;
+    font-family: "DMSans-Regular" !important;
+  }
+}
+
+
+.liner {
+  position: absolute;
+  height: 270px;
+  width: 4px;
+  background: #F7D0D0;
+  left: 27px;
+  z-index: -1;
+}
+
+@media (min-width: 576px) {
+  .page-flex {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    --background: linear-gradient(225deg, #FFA44C 0%, #FD3C83 100%);
+  }
+
+  .liner {
+    height: 170px;
+  }
+
+  .stepper {
+    gap: 1.2rem;
+  }
+
+  .page-flex {
+flex-direction: column;
+margin-top: 0rem;
+height: 100%;
+display: flex;
+justify-content: center;
+
+    .modal-img {
+      display: flex;
+      justify-content: center;
+
+      ion-img {
+        // width: 200px;
+      }
+    }
+  }
+}
