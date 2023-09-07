@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-
-
-
-
-
-
 const routes: Routes = [
   {
     path: '',
@@ -16,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'public',
-              loadChildren: () => import('./pages/public/public-routing.module').then(m => m.PublicRoutingModule)
+    loadChildren: () => import('./pages/public/public-routing.module').then(m => m.PublicRoutingModule)
   },
   {
     path: 'member',

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-row ion-padding">
+      <div class="header-row-left">
+        <a class="nav-logo" href="#index">
+          <ion-img src="assets/img/peachy-side.png"></ion-img>
+        </a>
+
+        <div class="nav-links  ion-hide-lg-down">
+          <a href="#about">About</a>
+          <a href="#how">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faqs">FAQs</a>
+        </div>
+      </div>
+      <div class="header-row-right">
+        <ion-button (click)="goTo('login')" fill="outline" color="dark" size="small">
+          <ion-label>Login</ion-label>
+        </ion-button>
+        <ion-button (click)="goTo('register')" color="brand" size="small">
+          <ion-label>Sign up</ion-label>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container ion-padding">
+    <h2><strong>Cookies</strong></h2>
+    <h3><span >What are cookies and why do we use them?</span></h3>
+    <p><span >A cookie is a small text file of letters and numbers that we place on your computer or device when you use our website. Cookies help us to collect data about you which, will in turn, distinguish you from other visitors and provide you with a good experience whenever you are using our website. The only cookies we use are from Google Analytics.</span></p>
+    <h3><span >What types of cookies do we use?</span></h3>
+    <p><span >Some cookies only last until you close your browser or for a short time after. These are called session cookies. Some last longer, for example, to enable a website to recognise you when you return to it. These are called persistent cookies. We use both session and persistent cookies to ensure that you get the best experience when using our website.</span></p>
+    <p><span >There are also different types of cookies to collect different types of data about the way you interact with our website. We only use performance cookies. These are cookies that allow us to recognise and count the number of visitors we have and how these visitors use our website. This data helps us to improve the way our website works, for example, by ensuring that visitors find what they are looking for easily.</span></p>
+    <h4><span >How can you manage cookies?</span></h4>
+    <p><span >If the settings on your browser are adjusted to accept cookies we interpret this, along with your continued use of our website, platform or mobile app to mean that you agree to our use of cookies.</span></p>
+    <p><span >To manage or block cookies placed on your computer, mobile phone or tablet, you need to alter your browser or device settings. Please consult your browser&rsquo;s guide or visit </span><a href="http://www.allaboutcookies.org/"><span >www.allaboutcookies.org</span></a><span > for more information or refer to your device user manual.</span></p>
+    <p><span >You can also click &lsquo;Cookie preferences&rsquo; at the bottom of this page and update your settings there.</span></p>
+    <h4><span >Third parties</span></h4>
+    <p><span >Please note that third parties (including, for example, advertising networks and providers of external services like web traffic analysis services) may also use cookies, over which we have no control. These cookies are likely to be performance cookies or targeting cookies.</span></p>
+    <p><span >If you are concerned about cookies from third parties, you can often opt-out with the provider directly (such as with Google Analytics, please visit </span><a href="https://tools.google.com/dlpage/gaoptout"><span >https://tools.google.com/dlpage/gaoptout</span></a><span >).</span><span > Please note that these providers may use cookies to power their opt-out service, so if you change your browser settings to block all cookies, their opt-out service may cease to work.</span></p>
+    <h2><br /><br /></h2>
+  </div>
+  <div class="copyright ion-padding">&copy; Peachy healthcare by <a href="https://www.linkedin.com/in/dansteve-adekanbi/">Dansteve Adekanbi (2023)</a></div>
+  <div class="copyright ion-padding"><a (click)="goTo('privacy-policy')">Privacy Policy</a> and <a (click)="goTo('cookies-policy')">Cookies Policy.</a>
+  </div>
+</ion-content>

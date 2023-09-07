@@ -121,7 +121,7 @@
 
       <div class="how-divider ion-hide-lg-down">
         <ion-img src="assets/icon/divider.svg"></ion-img>
-        </div>
+      </div>
 
       <div class="how-card">
         <div class="how-card-count full">
@@ -220,7 +220,7 @@
         </ion-col>
 
         <ion-col sizeXl="4" sizeLg="6" size="12">
-          <div class="pricing-card brand" >
+          <div class="pricing-card brand">
             <div class="pricing-card-top brand">
               <div class="pricing-card-title">{{pricing === 'year' ? 'Enhanced Plan' : 'One Off'}} </div>
               <div class="pricing-card-amount">£{{pricing === 'year' ? '300.00' : '200.00'}}</div>
@@ -262,7 +262,9 @@
         </ion-col>
       </ion-row>
     </div>
-
-    <div class="copyright ion-padding">&copy; Peachy healthcare by <a href="https://www.linkedin.com/in/dansteve-adekanbi/">Dansteve Adekanbi (2023)</a></div>
+  </div>
+  <div class="copyright ion-padding">&copy; Peachy healthcare by <a href="https://www.linkedin.com/in/dansteve-adekanbi/">Dansteve Adekanbi (2023)</a></div>
+  <div class="copyright ion-padding">
+    <a (click)="goTo('privacy-policy')">Privacy Policy</a> and <a (click)="goTo('cookies-policy')">Cookies Policy.</a>
   </div>
 </ion-content>

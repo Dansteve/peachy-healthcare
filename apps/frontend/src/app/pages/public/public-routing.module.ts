@@ -20,6 +20,18 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
   },
   {
+    path: 'cookies-policy',
+    title: 'Cookies Policy',
+    loadChildren: () =>
+      import('./cookies-policy/cookies-policy.module').then((m) => m.CookiesPolicyPageModule),
+  },
+  {
+    path: 'privacy-policy',
+    title: 'Privacy Policy',
+    loadChildren: () =>
+      import('./privacy-policy/privacy-policy.module').then((m) => m.PrivacyPolicyPageModule),
+  },
+  {
     path: 'login',
     title: 'Login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
