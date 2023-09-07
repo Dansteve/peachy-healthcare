@@ -99,7 +99,7 @@
 
     <div class="take-a-test">
       <div class="take-a-test-content">
-        <div class="take-a-test-title">Take a Test and get instant Result</div>
+        <div class="take-a-test-title">Take a test and get an instant result</div>
         <div class="take-a-test-subtitle">Using the provided materials in the kit, collect your sample. Ensure you follow the step-by-step instructions carefully to ensure accuracy. Once done, safely package the sample in the return envelope.</div>
         <div>
           <ion-button (click)="goTo('login')" color="light">
@@ -192,20 +192,20 @@
             <ion-label>Annually</ion-label>
           </ion-segment-button>
           <ion-segment-button value="month">
-            <ion-label>Monthly</ion-label>
+            <ion-label>One Off</ion-label>
           </ion-segment-button>
         </ion-segment>
       </div>
 
       <ion-row>
         <ion-col sizeXl="4" sizeLg="6" size="12">
-          <div class="pricing-card">
+          <div class="pricing-card" [ngClass]="{'disabled': pricing !== 'year'}">
             <div class="pricing-card-top">
               <div class="pricing-card-title">Basic Plan</div>
-              <div class="pricing-card-amount">£{{pricing === 'year' ? '24.99' : '2.49'}}</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '250.00' : '250.00'}}</div>
               <div class="pricing-card-type">/{{pricing}}</div>
               <div class="w-full">
-                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                <ion-button color="dark" [disabled]="pricing !== 'year'" expand="block" shape="round" (click)="goTo('register')">
                   <ion-label> Select plan </ion-label>
                 </ion-button>
               </div>
@@ -220,11 +220,11 @@
         </ion-col>
 
         <ion-col sizeXl="4" sizeLg="6" size="12">
-          <div class="pricing-card brand">
+          <div class="pricing-card brand" >
             <div class="pricing-card-top brand">
-              <div class="pricing-card-title">Enhanced Plan</div>
-              <div class="pricing-card-amount">£{{pricing === 'year' ? '52.99' : '5.29'}}</div>
-              <div class="pricing-card-type">/{{pricing}}</div>
+              <div class="pricing-card-title">{{pricing === 'year' ? 'Enhanced Plan' : 'One Off'}} </div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '300.00' : '200.00'}}</div>
+              <div class="pricing-card-type">/{{pricing === 'year' ? pricing : 'One Off'}}</div>
               <div class="w-full">
                 <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
                   <ion-label> Select plan </ion-label>
@@ -241,13 +241,13 @@
         </ion-col>
 
         <ion-col sizeXl="4" sizeLg="6" size="12">
-          <div class="pricing-card">
+          <div class="pricing-card" [ngClass]="{'disabled': pricing !== 'year'}">
             <div class="pricing-card-top">
               <div class="pricing-card-title">Premium Plan</div>
-              <div class="pricing-card-amount">£{{pricing === 'year' ? '100.99' : '10.49'}}</div>
+              <div class="pricing-card-amount">£{{pricing === 'year' ? '400.00' : '400.00'}}</div>
               <div class="pricing-card-type">/{{pricing}}</div>
               <div class="w-full">
-                <ion-button color="dark" expand="block" shape="round" (click)="goTo('register')">
+                <ion-button color="dark" [disabled]="pricing !== 'year'" expand="block" shape="round" (click)="goTo('register')">
                   <ion-label> Select plan </ion-label>
                 </ion-button>
               </div>

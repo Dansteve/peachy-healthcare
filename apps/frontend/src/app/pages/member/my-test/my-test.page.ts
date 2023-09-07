@@ -72,7 +72,7 @@ export class MyTestPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.showTakeTestModal();
+    this.showTakeTestModal();
   }
 
 
